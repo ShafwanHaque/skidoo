@@ -1,26 +1,483 @@
 @import "tailwindcss";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
 
+/* ==================== ROOT VARIABLES ==================== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Mode Colors */
+  --color-primary-light: #6c00d1;
+  --color-secondary-light: #00c8ff;
+  --color-bg-light: #ffffff;
+  --color-text-light: #1f2937;
+  
+  /* Dark Mode Colors */
+  --color-primary-dark: #00c8ff;
+  --color-secondary-dark: #6c00d1;
+  --color-bg-dark: #1d1d1d;
+  --color-text-dark: #ffffff;
+  
+  /* Transitions */
+  --transition-fast: 200ms ease-in-out;
+  --transition-normal: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+  
+  /* Shadows */
+  --shadow-sm: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  --shadow-md: 4px 4px 0 rgba(0, 0, 0, 0.15);
+  --shadow-lg: 6px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ==================== BASE STYLES ==================== */
+* {
+  font-family: Outfit, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+.font-outfit {
+  font-family: Outfit, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.font-ovo {
+  font-family: Ovo, Georgia, "Times New Roman", serif;
+}
+
+/* ==================== THEME COLORS ==================== */
+.light-theme-color {
+  color: var(--color-primary-light);
+}
+
+.dark-theme-color {
+  color: var(--color-primary-dark);
+}
+
+/* Hover States */
+.light-theme-color-hover {
+  transition: color var(--transition-normal), font-weight var(--transition-fast);
+}
+
+.light-theme-color-hover:hover,
+.light-theme-active {
+  color: var(--color-secondary-light);
+  font-weight: 600;
+}
+
+.dark-theme-color-hover {
+  transition: color var(--transition-normal), font-weight var(--transition-fast);
+}
+
+.dark-theme-color-hover:hover,
+.dark-theme-active {
+  color: var(--color-secondary-dark);
+  font-weight: 600;
+}
+
+/* ==================== DARK MODE ==================== */
+.dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+
+.dark * {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ==================== INTERACTIVE STATES ==================== */
+.light-hover {
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+.light-hover:hover {
+  background-color: #edfafd;
+  color: #000000;
+}
+
+.dark-hover {
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+.dark-hover:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.light-theme {
+  transition: color var(--transition-normal);
+}
+
+.light-theme:hover {
+  color: #000000;
+}
+
+.dark-theme {
+  transition: color var(--transition-normal);
+}
+
+.dark-theme:hover {
+  color: #76d9f5;
+}
+
+/* ==================== SHADOWS ==================== */
+.black-box-shadow {
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+
+.black-box-shadow:hover {
+  box-shadow: 4px 4px 0 #000;
+  transform: translate(-2px, -2px);
+}
+
+.white-box-shadow {
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+
+.white-box-shadow:hover {
+  box-shadow: 4px 4px 0 #fff;
+  transform: translate(-2px, -2px);
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+
+/* Smooth Transitions */
+.transition-smooth {
+  transition: all var(--transition-normal);
+}
+
+/* Focus Styles for Accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-secondary-light);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.dark *:focus-visible {
+  outline-color: var(--color-primary-dark);
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* ==================== GRADIENT UTILITIES ==================== */
+.gradient-purple-blue {
+  background: linear-gradient(135deg, #e9d5ff 0%, #dbeafe 100%);
+}
+
+.gradient-purple-blue-dark {
+  background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+}
+
+/* ==================== ANIMATION UTILITIES ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--transition-slow);
+}
+
+.animate-slide-up {
+  animation: slideUp var(--transition-slow);
+}
+
+.animate-slide-down {
+  animation: slideDown var(--transition-slow);
+}
+
+/* ==================== RESPONSIVE UTILITIES ==================== */
+
+/* Mobile First Adjustments */
+@media screen and (max-width: 400px) {
+  #home {
+    padding-top: 7rem;
+  }
+  
+  /* Ensure text is readable on small screens */
+  body {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  /* Reduce heading sizes on mobile */
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  /* Adjust padding for mobile */
+  section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* ==================== COMPONENT-SPECIFIC STYLES ==================== */
+
+/* Modal Backdrop */
+.modal-backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Card Hover Effects */
+.card-interactive {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark .card-interactive:hover {
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Button Base Styles */
+.btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.btn-base:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Link Styles */
+a {
+  transition: color var(--transition-fast);
+}
+
+/* Selection Styles */
+::selection {
+  background-color: var(--color-primary-light);
+  color: white;
+}
+
+.dark ::selection {
+  background-color: var(--color-primary-dark);
+  color: black;
+}
+
+/* ==================== LOADING STATES ==================== */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
+}
+
+.dark .skeleton {
+  background: linear-gradient(90deg, #2d2d2d 25%, #3d3d3d 50%, #2d2d2d 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ==================== PRINT STYLES ==================== */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+}
+
+/* ==================== ACCESSIBILITY IMPROVEMENTS ==================== */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  * {
+    border-width: 2px !important;
+  }
+}
+
+/* ==================== PERFORMANCE OPTIMIZATIONS ==================== */
+
+/* GPU Acceleration for smooth animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Optimize repaints */
+.optimize-repaint {
+  contain: layout style paint;
+}
+
+/* ==================== CUSTOM UTILITIES ==================== */
+
+/* Truncate text with ellipsis */
+.truncate-2-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.truncate-3-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-secondary-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
