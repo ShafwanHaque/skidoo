@@ -152,7 +152,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
               }`}
               aria-label="Connect on LinkedIn"
             >
-              <span className="font-ovo">Let's connect</span>
+              <span className="font-ovo">Let&apos;s connect</span>
               <i
                 className="fa fa-arrow-right rotate-[-45deg]"
                 aria-hidden="true"

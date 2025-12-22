@@ -1,6 +1,9 @@
-# Allow all search engines
+# *
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Host
+Host: https://shafwanulhaque.com
+
+# Sitemaps
 Sitemap: https://shafwanulhaque.com/sitemap.xml

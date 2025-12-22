@@ -40,6 +40,7 @@ const Contact = ({ isDarkMode }: ContactProps) => {
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } catch (error) {
+      console.log(error);      
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
@@ -72,7 +73,7 @@ const Contact = ({ isDarkMode }: ContactProps) => {
         transition={{ duration: 0.5, delay: 0.5 }}
         className='text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo'
       >
-        Have a project in mind or just want to chat? Feel free to reach out. I'm always open to discussing new opportunities and collaborations.
+        Have a project in mind or just want to chat? Feel free to reach out. I&apos;m always open to discussing new opportunities and collaborations.
       </motion.p>
 
       <div className='max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start'>
@@ -198,12 +199,12 @@ const Contact = ({ isDarkMode }: ContactProps) => {
             <h4 className={`font-semibold mb-2 ${
               isDarkMode ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              Let's Build Something Great
+              Let&apos;s Build Something Great
             </h4>
             <p className={`text-sm ${
               isDarkMode ? 'text-gray-400' : 'text-gray-600'
             }`}>
-              Whether you have a project in mind, need technical consultation, or just want to connect, I'm here to help bring your ideas to life.
+              Whether you have a project in mind, need technical consultation, or just want to connect, I&apos;m here to help bring your ideas to life.
             </p>
           </div>
         </motion.div>
@@ -319,7 +320,7 @@ const Contact = ({ isDarkMode }: ContactProps) => {
           {submitStatus === 'success' && (
             <div className='p-4 rounded-lg bg-green-100 text-green-700 flex items-center gap-2'>
               <i className='fa fa-check-circle'></i>
-              <span>Message sent successfully! I'll get back to you soon.</span>
+              <span>Message sent successfully! I&apos;ll get back to you soon.</span>
             </div>
           )}
 
