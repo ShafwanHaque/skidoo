@@ -4,7 +4,6 @@ import Image from "next/image";
 import headerBg from "@/assets/header-bg-color.png";
 import { assets, navigationLinks, personalInfo } from "@/assets/assets";
 import MobileNav from "./MobiileNav";
-import Link from "next/link";
 
 type NavbarProps = {
   isDarkMode: boolean;
@@ -14,21 +13,9 @@ type NavbarProps = {
 const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeHash, setActiveHash] = useState("#home");
+  const [activeSection, setActiveSection] = useState("home");
 
-  // Track active section based on URL hash
-  useEffect(() => {
-    const handleHashChange = () => {
-      setActiveHash(window.location.hash || "#home");
-    };
-
-    handleHashChange();
-    window.addEventListener("hashchange", handleHashChange);
-
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, []);
-
-  // Track scroll position
+  // Track scroll position for navbar background
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -38,9 +25,41 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Track active section based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["home", "about", "skills", "projects", "experience", "contact"];
+      const scrollPosition = window.scrollY + 100; // Offset for navbar height
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(section);
+            // Update URL hash without scrolling
+            if (window.location.hash !== `#${section}`) {
+              window.history.replaceState(null, "", `#${section}`);
+            }
+            break;
+          }
+        }
+      }
+    };
+
+    // Initial check
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // Get navigation link classes
-  const getNavClass = (hash: string) => {
-    const isActive = activeHash === hash;
+  const getNavClass = (href: string) => {
+    const sectionId = href.replace("#", "");
+    const isActive = activeSection === sectionId;
     const baseClass = "font-ovo transition-colors duration-300";
 
     if (isActive) {
@@ -74,25 +93,24 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
         }`}
         aria-hidden="true"
       >
-        <Image
-          src={headerBg}
-          alt=""
-          priority
-          className="w-full"
-        />
+        <Image src={headerBg} alt="" priority className="w-full" />
       </div>
 
       {/* Navigation Bar */}
       <nav
-        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-2 flex items-center justify-between z-50 transition-all duration-300 ${
-          isScrolled ? "backdrop-blur-xl shadow-sm" : ""
-        } ${isDarkMode && isScrolled ? "shadow-white/20" : ""}`}
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-3 flex items-center justify-between z-50 transition-all duration-300 ${
+          isScrolled
+            ? isDarkMode
+              ? "bg-gray-900/95 backdrop-blur-lg shadow-lg shadow-white/5"
+              : "bg-white/95 backdrop-blur-lg shadow-md"
+            : ""
+        }`}
         role="navigation"
         aria-label="Main navigation"
       >
         {/* Logo */}
         <div>
-          <Link href="#home" aria-label="Go to home section">
+          <a href="#home" aria-label="Go to home section">
             <Image
               src={isDarkMode ? assets.logo_dark : assets.logo}
               className="w-28 md:w-40 cursor-pointer"
@@ -100,20 +118,24 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
               width={160}
               height={40}
             />
-          </Link>
+          </a>
         </div>
 
         {/* Desktop Navigation */}
         <ul
-          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 transition-all duration-300 ${
-            isScrolled ? "" : "shadow-sm"
-          } ${isDarkMode && !isScrolled ? "shadow-white/20" : ""}`}
+          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-8 py-2.5 transition-all duration-300 ${
+            isScrolled
+              ? ""
+              : isDarkMode
+              ? "bg-gray-800 shadow-lg shadow-white/10"
+              : "bg-white shadow-md"
+          }`}
         >
           {navigationLinks.map((link) => (
             <li key={link.href}>
-              <Link className={getNavClass(link.href)} href={link.href}>
+              <a className={getNavClass(link.href)} href={link.href}>
                 {link.name}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
@@ -123,11 +145,14 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
           {/* Theme Toggle */}
           <button
             onClick={() => setIsDarkMode((prev) => !prev)}
-            className="cursor-pointer p-2 rounded-full transition-colors"
+            className="cursor-pointer p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             aria-label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
           >
             {!isDarkMode ? (
-              <i className="text-2xl lg:text-3xl fa fa-moon" aria-hidden="true"></i>
+              <i
+                className="text-2xl lg:text-3xl fa fa-moon"
+                aria-hidden="true"
+              ></i>
             ) : (
               <Image
                 src={assets.sun_icon}
@@ -141,7 +166,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
 
           {/* Connect Button (Desktop) */}
           <div className="hidden md:flex">
-            <Link
+            <a
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
@@ -152,12 +177,9 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
               }`}
               aria-label="Connect on LinkedIn"
             >
-              <span className="font-ovo">Let&apos;s connect</span>
-              <i
-                className="fa fa-arrow-right rotate-[-45deg]"
-                aria-hidden="true"
-              ></i>
-            </Link>
+              <span className="font-ovo">Let's connect</span>
+              <i className="fa fa-arrow-right rotate-[-45deg]" aria-hidden="true"></i>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -176,6 +198,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
           isDarkMode={isDarkMode}
           isOpen={isMenuOpen}
           onClose={() => setIsMenuOpen(false)}
+          activeSection={activeSection}
         />
       </nav>
     </>

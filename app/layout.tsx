@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
 
@@ -16,20 +16,33 @@ const ovo = Ovo({
   variable: "--font-ovo"
 });
 
+// Viewport configuration to prevent mobile zoom
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#6c00d1" },
+    { media: "(prefers-color-scheme: dark)", color: "#00c8ff" }
+  ],
+};
+
 export const metadata: Metadata = {
   title: {
     default: "Shafwanul Haque Chowdhury | Full-Stack Developer Portfolio",
     template: "%s | Shafwanul Haque Chowdhury"
   },
-  description: "Full-stack web developer from Dhaka, Bangladesh, specializing in React, Next.js, Node.js, and modern web technologies. Currently building real-world solutions at CodeLab FZC LLC, UAE since June 2024.",
+  description: "Full-stack web developer from Dhaka, Bangladesh, specializing in NestJS, Next.js, ASP.NET Core, Vue.js, Laravel and modern web technologies. Currently building real-world solutions at CodeLab FZC LLC, UAE since June 2024.",
   keywords: [
     "Shafwanul Haque Chowdhury",
     "Full-stack developer",
     "Web developer Bangladesh",
-    "React developer",
+    "NestJS developer",
     "Next.js developer",
-    "Node.js developer",
-    "JavaScript developer",
+    "ASP.NET Core developer",
+    "Vue.js developer",
+    "Laravel developer",
     "TypeScript developer",
     "Frontend developer",
     "Backend developer",
@@ -39,7 +52,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Shafwanul Haque Chowdhury" }],
   creator: "Shafwanul Haque Chowdhury",
   publisher: "Shafwanul Haque Chowdhury",
-  metadataBase: new URL("https://shafwanulhaque.com"), // Replace with your actual domain
+  metadataBase: new URL("https://shafwanulhaque.com"),
   alternates: {
     canonical: "/"
   },
@@ -48,11 +61,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     title: "Shafwanul Haque Chowdhury | Full-Stack Developer Portfolio",
-    description: "Full-stack web developer from Dhaka, Bangladesh, specializing in React, Next.js, and modern web technologies. Building impactful digital solutions.",
+    description: "Full-stack web developer from Dhaka, Bangladesh, specializing in NestJS, Next.js, ASP.NET Core, and modern web technologies. Building impactful digital solutions.",
     siteName: "Shafwanul Haque Chowdhury Portfolio",
     images: [
       {
-        url: "/og-image.jpg", // Add an Open Graph image (1200x630px)
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Shafwanul Haque Chowdhury - Full-Stack Developer"
@@ -62,9 +75,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Shafwanul Haque Chowdhury | Full-Stack Developer",
-    description: "Full-stack web developer specializing in React, Next.js, and modern web technologies",
-    images: ["/og-image.jpg"], // Same image as Open Graph
-    creator: "@yourtwitter" // Add your Twitter handle
+    description: "Full-stack web developer specializing in NestJS, Next.js, ASP.NET Core, and modern web technologies",
+    images: ["/og-image.jpg"],
+    creator: "@yourtwitter"
   },
   robots: {
     index: true,
@@ -78,9 +91,7 @@ export const metadata: Metadata = {
     }
   },
   verification: {
-    google: "your-google-verification-code", // Add Google Search Console verification
-    // yandex: "your-yandex-verification-code",
-    // bing: "your-bing-verification-code"
+    google: "your-google-verification-code",
   }
 };
 
@@ -96,7 +107,6 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#6c00d1" />
         
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -110,7 +120,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Shafwanul Haque Chowdhury",
-              "url": "https://shafwanulhaque.com", // Replace with your actual domain
+              "url": "https://shafwanulhaque.com",
               "jobTitle": "Full-Stack Web Developer",
               "worksFor": {
                 "@type": "Organization",
@@ -127,9 +137,11 @@ export default function RootLayout({
                 "https://github.com/shafwanHaque"
               ],
               "knowsAbout": [
-                "React",
+                "NestJS",
                 "Next.js",
-                "Node.js",
+                "ASP.NET Core",
+                "Vue.js",
+                "Laravel",
                 "TypeScript",
                 "JavaScript",
                 "Full-Stack Development",
