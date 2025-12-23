@@ -35,7 +35,7 @@ const MobileNav = ({ isOpen, onClose, isDarkMode, activeSection }: MobileNavProp
           exit={{ x: "100%" }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className={`fixed top-0 right-0 bottom-0 w-72 z-40 ${
-            isDarkMode ? "bg-gray-800" : "bg-gray-100"
+            isDarkMode ? "bg-gray-950" : "bg-gray-100"
           } shadow-2xl`}
           role="navigation"
           aria-label="Mobile navigation"

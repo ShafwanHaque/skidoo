@@ -101,8 +101,8 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
         className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-3 flex items-center justify-between z-50 transition-all duration-300 ${
           isScrolled
             ? isDarkMode
-              ? "bg-gray-900/95 backdrop-blur-lg shadow-lg shadow-white/5"
-              : "bg-white/95 backdrop-blur-lg shadow-md"
+              ? "md:bg-gray-950/95 md:backdrop-blur-lg md:shadow-lg md:shadow-white/5"
+              : "md:bg-white/95 md:backdrop-blur-lg md:shadow-md"
             : ""
         }`}
         role="navigation"

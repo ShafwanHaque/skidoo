@@ -34,8 +34,8 @@ const Footer = ({ isDarkMode }: FooterProps) => {
 
   return (
     <footer
-      className={`mt-20 pt-12 pb-6 ${
-        isDarkMode ? "bg-black" : "bg-gray-50"
+      className={`w-full mt-20 pt-12 pb-6 ${
+        isDarkMode ? "bg-gray-950" : "bg-gray-50"
       }`}
       role="contentinfo"
     >
