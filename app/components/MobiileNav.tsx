@@ -34,9 +34,12 @@ const MobileNav = ({ isOpen, onClose, isDarkMode, activeSection }: MobileNavProp
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className={`fixed top-0 right-0 bottom-0 w-72 z-40 ${
-            isDarkMode ? "bg-gray-950" : "bg-gray-100"
-          } shadow-2xl`}
+          className="fixed top-0 right-0 w-72 z-40 shadow-2xl"
+          style={{ 
+            backgroundColor: isDarkMode ? "#030712" : "#f3f4f6",
+            opacity: 1,
+            height:  "100vh"
+          }}
           role="navigation"
           aria-label="Mobile navigation"
         >
@@ -54,7 +57,7 @@ const MobileNav = ({ isOpen, onClose, isDarkMode, activeSection }: MobileNavProp
           </button>
 
           {/* Navigation Links */}
-          <ul className="flex flex-col gap-6 py-20 px-8">
+          <ul className={`flex flex-col gap-6 py-20 px-8 ${isDarkMode ?'bg-gray-950': 'bg-gray-100'}`}>
             {navigationLinks.map((link, index) => (
               <motion.li
                 key={link.href}

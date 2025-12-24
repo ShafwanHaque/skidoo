@@ -272,7 +272,7 @@ body {
 /* Mobile First Adjustments */
 @media screen and (max-width: 400px) {
   #home {
-    padding-top: 7rem;
+    padding-top: 9rem;
   }
   
   /* Ensure text is readable on small screens */

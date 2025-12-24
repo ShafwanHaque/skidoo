@@ -14,6 +14,8 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   // Track scroll position for navbar background
   useEffect(() => {
@@ -28,7 +30,14 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
   // Track active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "skills", "projects", "experience", "contact"];
+      const sections = [
+        "home",
+        "about",
+        "skills",
+        "projects",
+        "experience",
+        "contact",
+      ];
       const scrollPosition = window.scrollY + 100; // Offset for navbar height
 
       for (const section of sections) {
@@ -56,6 +65,47 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleScrollDirection = () => {
+      const currentScrollY = window.scrollY;
+
+      // Only apply on mobile
+      if (window.innerWidth < 768) {
+        if (currentScrollY > lastScrollY && currentScrollY > 80) {
+          // Scrolling DOWN
+          setIsNavbarVisible(false);
+        } else {
+          // Scrolling UP
+          setIsNavbarVisible(true);
+        }
+      } else {
+        // Always visible on desktop
+        setIsNavbarVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScrollDirection);
+    return () => window.removeEventListener("scroll", handleScrollDirection);
+  }, [lastScrollY]);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+      document.body.style.touchAction = "none"; // mobile Safari fix
+    } else {
+      document.body.style.overflow = "";
+      document.body.style.touchAction = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.touchAction = "";
+    };
+  }, [isMenuOpen]);
+
+
   // Get navigation link classes
   const getNavClass = (href: string) => {
     const sectionId = href.replace("#", "");
@@ -80,7 +130,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
       {/* Background Overlay for Mobile Menu */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-30 transition-opacity duration-300"
+          className="fixed inset-0 bg-black/30 z-40 transition-opacity duration-300"
           onClick={() => setIsMenuOpen(false)}
           aria-hidden="true"
         />
@@ -98,11 +148,14 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
 
       {/* Navigation Bar */}
       <nav
-        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-3 flex items-center justify-between z-50 transition-all duration-300 ${
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-3 flex items-center justify-between z-50
+        transition-transform duration-300 ease-in-out
+        ${isNavbarVisible ? "translate-y-0" : "-translate-y-full"}
+        ${
           isScrolled
             ? isDarkMode
-              ? "md:bg-gray-950/95 md:backdrop-blur-lg md:shadow-lg md:shadow-white/5"
-              : "md:bg-white/95 md:backdrop-blur-lg md:shadow-md"
+              ? "bg-gray-950/95 backdrop-blur-lg shadow-lg shadow-white/5"
+              : "bg-white/95 backdrop-blur-lg shadow-md"
             : ""
         }`}
         role="navigation"
@@ -113,7 +166,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
           <a href="#home" aria-label="Go to home section">
             <Image
               src={isDarkMode ? assets.logo_dark : assets.logo}
-              className="w-28 md:w-40 cursor-pointer"
+              className="w-28 md:w-30 cursor-pointer"
               alt={`${personalInfo.name} logo`}
               width={160}
               height={40}
