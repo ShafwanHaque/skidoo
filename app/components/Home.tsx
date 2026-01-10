@@ -14,7 +14,7 @@ const Home = ({ isDarkMode }: HomeProps) => {
   return (
     <section
       id="home"
-      className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-3"
+      className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-3 py-16"
       aria-labelledby="home-heading"
     >
       {/* Profile Image */}

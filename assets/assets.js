@@ -79,7 +79,7 @@ export const personalInfo = {
   name: "Shafwanul Haque Chowdhury",
   title: "Full-Stack Web Developer",
   location: "Dhaka, Bangladesh",
-  email: "safwan198207@gmail.com",
+  email: "shafwanulhaquechowdhury@gmail.com",
   linkedin: "https://www.linkedin.com/in/shafwanul-haque-chowdhury",
   github: "https://github.com/shafwanHaque",
   resume: "https://drive.google.com/file/d/17ld9AXZl56Lzb2D6NYAgz3LVaCYBDYlo/view?usp=sharing",

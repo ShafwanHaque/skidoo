@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from "motion/react";
 import Link from 'next/link';
+import emailjs from '@emailjs/browser';
 
 type ContactProps = {
   isDarkMode: boolean;
@@ -30,9 +31,28 @@ const Contact = ({ isDarkMode }: ContactProps) => {
     setSubmitStatus('idle');
 
     try {
-      // Add your form submission logic here
-      // For now, we'll simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // EmailJS configuration
+      const serviceId = 'service_spwepts';
+      const templateId = 'template_7jxxwyi';
+      const publicKey = 'vHmAFoRfrLtp8g69F';
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS configuration is missing');
+      }
+
+      // Send email using EmailJS
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'shafwanulhaquechowdhury@gmail.com',
+        },
+        publicKey
+      );
       
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -40,7 +60,7 @@ const Contact = ({ isDarkMode }: ContactProps) => {
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } catch (error) {
-      console.log(error);      
+      console.error('EmailJS Error:', error);
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
@@ -93,7 +113,7 @@ const Contact = ({ isDarkMode }: ContactProps) => {
             
             <div className='space-y-4'>
               <Link 
-                href="mailto:safwan198207@gmail.com"
+                href="mailto:shafwanulhaquechowdhury@gmail.com"
                 className={`flex items-center gap-4 p-4 rounded-lg transition-all duration-300 ${
                   isDarkMode 
                     ? 'hover:bg-gray-800 text-gray-300' 
@@ -113,7 +133,7 @@ const Contact = ({ isDarkMode }: ContactProps) => {
                   }`}>
                     Email
                   </p>
-                  <p className='font-medium'>safwan198207@gmail.com</p>
+                  <p className='font-medium'>shafwanulhaquechowdhury@gmail.com</p>
                 </div>
               </Link>
 

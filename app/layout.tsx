@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Shafwanul Haque Chowdhury" }],
   creator: "Shafwanul Haque Chowdhury",
   publisher: "Shafwanul Haque Chowdhury",
-  metadataBase: new URL("https://shafwanulhaque.com"),
+  metadataBase: new URL("https://shafwanulhaquechowdhury.vercel.app"),
   alternates: {
     canonical: "/"
   },
@@ -120,7 +120,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Shafwanul Haque Chowdhury",
-              "url": "https://shafwanulhaque.com",
+              "url": "https://shafwanulhaquechowdhury.vercel.app",
               "jobTitle": "Full-Stack Web Developer",
               "worksFor": {
                 "@type": "Organization",
@@ -131,7 +131,7 @@ export default function RootLayout({
                 "addressLocality": "Dhaka",
                 "addressCountry": "Bangladesh"
               },
-              "email": "safwan198207@gmail.com",
+              "email": "shafwanulhaquechowdhury@gmail.com",
               "sameAs": [
                 "https://www.linkedin.com/in/shafwanul-haque-chowdhury",
                 "https://github.com/shafwanHaque"
