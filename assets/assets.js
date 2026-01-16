@@ -82,7 +82,7 @@ export const personalInfo = {
   email: "shafwanulhaquechowdhury@gmail.com",
   linkedin: "https://www.linkedin.com/in/shafwanul-haque-chowdhury",
   github: "https://github.com/shafwanHaque",
-  resume: "https://drive.google.com/file/d/17ld9AXZl56Lzb2D6NYAgz3LVaCYBDYlo/view?usp=sharing",
+  resume: "https://drive.google.com/file/d/1l0Hv5lTXC9l3cf1DKMQQjtmU62mLu0WY/view?usp=sharing",
 };
 
 // ==================== HOME SECTION ====================
