@@ -198,7 +198,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
           {/* Theme Toggle */}
           <button
             onClick={() => setIsDarkMode((prev) => !prev)}
-            className="cursor-pointer p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className={`cursor-pointer p-2 rounded-full  transition-colors ${isDarkMode ? `hover:bg-gray-800` : 'hover:bg-gray-100'}`}
             aria-label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
           >
             {!isDarkMode ? (
