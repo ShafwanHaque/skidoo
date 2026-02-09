@@ -9,14 +9,21 @@ type ChainNativeMerchantProps = {
   isDarkMode?: boolean;
 };
 
-export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeMerchantProps) {
+export default function ChainNativeMerchant({
+  isDarkMode = false,
+}: ChainNativeMerchantProps) {
   const [activeTab, setActiveTab] = useState("overview");
+  const [activeScreenshot, setActiveScreenshot] = useState<{
+    title: string;
+    path: string;
+  } | null>(null);
 
   const projectInfo = {
     title: "ChainNative Merchant",
     subtitle: "Enterprise Bitcoin Payment Gateway System",
-    description: "A comprehensive, self-hosted Bitcoin payment processing platform designed for merchants to accept cryptocurrency payments with complete control and privacy. Built with modern enterprise architecture and containerized deployment.",
-    duration: "Development Period: June 2024 - December 2024",
+    description:
+      "A comprehensive, self-hosted Bitcoin payment processing platform designed for merchants to accept cryptocurrency payments with complete control and privacy. Built with modern enterprise architecture and containerized deployment.",
+    duration: "Development Period: January 2025 - Present",
     role: "Full-Stack Developer",
     company: "CodeLab FZC LLC",
   };
@@ -38,122 +45,152 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
     {
       icon: "fa fa-tachometer-alt",
       title: "Comprehensive Dashboard",
-      description: "Real-time monitoring of transactions, revenue analytics, and payment status tracking with intuitive data visualization.",
+      description:
+        "Real-time monitoring of transactions, revenue analytics, and payment status tracking with intuitive data visualization.",
     },
     {
       icon: "fa fa-store",
       title: "Store Settings",
-      description: "Flexible configuration for multiple stores with customizable payment methods, currencies, and business rules.",
+      description:
+        "Flexible configuration for multiple stores with customizable payment methods, currencies, and business rules.",
     },
     {
       icon: "fa fa-chart-line",
       title: "Dynamic Rate Management",
-      description: "Automated exchange rate updates with support for multiple fiat currencies and customizable rate sources.",
+      description:
+        "Automated exchange rate updates with support for multiple fiat currencies and customizable rate sources.",
     },
     {
       icon: "fa fa-shopping-cart",
       title: "Checkout Experience",
-      description: "Seamless payment flow with customizable branding, QR code generation, and mobile-optimized interfaces.",
+      description:
+        "Seamless payment flow with customizable branding, QR code generation, and mobile-optimized interfaces.",
     },
     {
       icon: "fa fa-users",
       title: "Store Users & Permissions",
-      description: "Role-based access control with granular permissions for team collaboration and secure multi-user management.",
+      description:
+        "Role-based access control with granular permissions for team collaboration and secure multi-user management.",
     },
     {
       icon: "fa fa-envelope",
       title: "Email Rules & Notifications",
-      description: "Automated email notifications for payment confirmations, refunds, and custom business triggers.",
+      description:
+        "Automated email notifications for payment confirmations, refunds, and custom business triggers.",
     },
     {
       icon: "fa fa-wallet",
       title: "BTC Wallet Management",
-      description: "Secure HD wallet implementation with full custody control, backup mechanisms, and multi-signature support.",
+      description:
+        "Secure HD wallet implementation with full custody control, backup mechanisms, and multi-signature support.",
     },
     {
       icon: "fa fa-paper-plane",
       title: "Send & Receive BTC",
-      description: "Integrated wallet functionality for direct Bitcoin transactions with fee estimation and batch processing.",
+      description:
+        "Integrated wallet functionality for direct Bitcoin transactions with fee estimation and batch processing.",
     },
     {
       icon: "fa fa-file-invoice-dollar",
       title: "Invoice System",
-      description: "Comprehensive invoicing with expiration management, partial payments, and automatic settlement tracking.",
+      description:
+        "Comprehensive invoicing with expiration management, partial payments, and automatic settlement tracking.",
     },
     {
       icon: "fa fa-chart-bar",
       title: "Advanced Reporting",
-      description: "Detailed financial reports, transaction history exports, and customizable analytics dashboards.",
+      description:
+        "Detailed financial reports, transaction history exports, and customizable analytics dashboards.",
     },
     {
       icon: "fa fa-credit-card",
       title: "Payment Requests",
-      description: "Create sharable payment links with customizable amounts, descriptions, and expiration dates.",
+      description:
+        "Create sharable payment links with customizable amounts, descriptions, and expiration dates.",
     },
     {
       icon: "fa fa-book",
       title: "Documentation Portal",
-      description: "Comprehensive API documentation and merchant guides for seamless integration and troubleshooting.",
+      description:
+        "Comprehensive API documentation and merchant guides for seamless integration and troubleshooting.",
     },
   ];
 
   const technicalHighlights = [
     {
       title: "Containerized Architecture",
-      description: "Fully Dockerized application ensuring consistent deployment across environments with docker-compose orchestration for seamless scaling and maintenance.",
+      description:
+        "Fully Dockerized application ensuring consistent deployment across environments with docker-compose orchestration for seamless scaling and maintenance.",
     },
     {
       title: "PostgreSQL Data Layer",
-      description: "Robust relational database design with optimized indexing, transaction integrity, and efficient query performance for high-volume payment processing.",
+      description:
+        "Robust relational database design with optimized indexing, transaction integrity, and efficient query performance for high-volume payment processing.",
     },
     {
       title: "Bitcoin Core Integration",
-      description: "Direct integration with Bitcoin network using NBitcoin library for wallet management, transaction signing, and blockchain synchronization.",
+      description:
+        "Direct integration with Bitcoin network using NBitcoin library for wallet management, transaction signing, and blockchain synchronization.",
     },
     {
       title: "RESTful API Design",
-      description: "Well-documented APIs following REST principles with authentication, rate limiting, and comprehensive error handling for third-party integrations.",
+      description:
+        "Well-documented APIs following REST principles with authentication, rate limiting, and comprehensive error handling for third-party integrations.",
     },
     {
       title: "Real-time Updates",
-      description: "WebSocket implementation for instant payment status notifications and live transaction monitoring without page refreshes.",
+      description:
+        "WebSocket implementation for instant payment status notifications and live transaction monitoring without page refreshes.",
     },
     {
       title: "Security First",
-      description: "Industry-standard encryption, secure key storage, HTTPS enforcement, and protection against common vulnerabilities (XSS, CSRF, SQL injection).",
+      description:
+        "Industry-standard encryption, secure key storage, HTTPS enforcement, and protection against common vulnerabilities (XSS, CSRF, SQL injection).",
     },
   ];
 
   const challenges = [
     {
       challenge: "Bitcoin Network Synchronization",
-      solution: "Implemented efficient block verification with pruning strategies and SPV wallet support to reduce storage requirements while maintaining security.",
+      solution:
+        "Implemented efficient block verification with pruning strategies and SPV wallet support to reduce storage requirements while maintaining security.",
     },
     {
       challenge: "Payment Confirmation Times",
-      solution: "Developed a configurable confirmation system with risk-based instant payment acceptance for trusted customers and full verification for high-value transactions.",
+      solution:
+        "Developed a configurable confirmation system with risk-based instant payment acceptance for trusted customers and full verification for high-value transactions.",
     },
     {
       challenge: "Exchange Rate Volatility",
-      solution: "Integrated multiple rate providers with automatic fallback mechanisms and configurable rate locking periods to protect against volatility during checkout.",
+      solution:
+        "Integrated multiple rate providers with automatic fallback mechanisms and configurable rate locking periods to protect against volatility during checkout.",
     },
     {
       challenge: "Multi-Store Scalability",
-      solution: "Architected a multi-tenant system with isolated wallet management and efficient database partitioning to support thousands of concurrent merchants.",
+      solution:
+        "Architected a multi-tenant system with isolated wallet management and efficient database partitioning to support thousands of concurrent merchants.",
     },
   ];
 
   const screenshots = [
-    { title: "Dashboard Overview", path: "/screenshots/merchant-dashboard.png" },
-    { title: "Store Settings", path: "/screenshots/merchant-store-settings.png" },
-    { title: "Checkout Interface", path: "/screenshots/merchant-checkout.png" },
-    { title: "Invoice Management", path: "/screenshots/merchant-invoices.png" },
-    { title: "Wallet Dashboard", path: "/screenshots/merchant-wallet.png" },
-    { title: "Reporting Analytics", path: "/screenshots/merchant-reports.png" },
+    {
+      title: "Dashboard Overview",
+      path: "/projects/chainnative-merchant/merchant-dashboard.png",
+    },
+    {
+      title: "Store Settings",
+      path: "/projects/chainnative-merchant/merchant-store-settings.png",
+    },
+    { title: "Checkout Interface", path: "/projects/chainnative-merchant/merchant-checkout.png" },
+    { title: "Invoice Management", path: "/projects/chainnative-merchant/merchant-invoices.png" },
+    { title: "Subscription Plan", path: "/projects/chainnative-merchant/subscription-list.png" },
+    { title: "Reporting Analytics", path: "/projects/chainnative-merchant/merchant-reports.png" },
   ];
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? "bg-gray-950 text-gray-100" : "bg-white text-gray-900"}`}>
+    <div
+      className={`min-h-screen ${isDarkMode ? "bg-gray-950 text-gray-100" : "bg-white text-gray-900"}`}
+    >
       {/* Logo */}
       <div className="flex p-5 justify-center">
         <Link href="/#home" aria-label="Go to home section">
@@ -181,9 +218,13 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-6"
           >
-            <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium ${
-              isDarkMode ? "bg-cyan-400/10 text-cyan-400" : "bg-purple-100 text-purple-600"
-            }`}>
+            <span
+              className={`inline-block px-4 py-2 rounded-full text-sm font-medium ${
+                isDarkMode
+                  ? "bg-cyan-400/10 text-cyan-400"
+                  : "bg-purple-100 text-purple-600"
+              }`}
+            >
               {projectInfo.company}
             </span>
           </motion.div>
@@ -191,10 +232,12 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-ovo font-bold mb-6">
             {projectInfo.title}
           </h1>
-          
-          <p className={`text-xl sm:text-2xl mb-4 font-medium ${
-            isDarkMode ? "text-cyan-400" : "text-purple-600"
-          }`}>
+
+          <p
+            className={`text-xl sm:text-2xl mb-4 font-medium ${
+              isDarkMode ? "text-cyan-400" : "text-purple-600"
+            }`}
+          >
             {projectInfo.subtitle}
           </p>
 
@@ -203,15 +246,23 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <span className={`px-4 py-2 rounded-full text-sm ${
-              isDarkMode ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-700"
-            }`}>
+            <span
+              className={`px-4 py-2 rounded-full text-sm ${
+                isDarkMode
+                  ? "bg-gray-800 text-gray-300"
+                  : "bg-gray-100 text-gray-700"
+              }`}
+            >
               <i className="fa fa-briefcase mr-2"></i>
               {projectInfo.role}
             </span>
-            <span className={`px-4 py-2 rounded-full text-sm ${
-              isDarkMode ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-700"
-            }`}>
+            <span
+              className={`px-4 py-2 rounded-full text-sm ${
+                isDarkMode
+                  ? "bg-gray-800 text-gray-300"
+                  : "bg-gray-100 text-gray-700"
+              }`}
+            >
               <i className="fa fa-calendar mr-2"></i>
               {projectInfo.duration}
             </span>
@@ -247,9 +298,11 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
       </section>
 
       {/* Technologies Section */}
-      <section className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
-        isDarkMode ? "bg-gray-900" : "bg-gray-50"
-      }`}>
+      <section
+        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+          isDarkMode ? "bg-gray-900" : "bg-gray-50"
+        }`}
+      >
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -259,7 +312,7 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
           <h2 className="text-3xl sm:text-4xl font-ovo font-bold text-center mb-12">
             Technology Stack
           </h2>
-          
+
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
             {technologies.map((tech, index) => (
               <motion.div
@@ -275,9 +328,11 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
                 } shadow-sm hover:shadow-md transition-all duration-300`}
               >
                 <p className="font-medium text-sm mb-1">{tech.name}</p>
-                <p className={`text-xs ${
-                  isDarkMode ? "text-gray-400" : "text-gray-500"
-                }`}>
+                <p
+                  className={`text-xs ${
+                    isDarkMode ? "text-gray-400" : "text-gray-500"
+                  }`}
+                >
                   {tech.category}
                 </p>
               </motion.div>
@@ -297,10 +352,13 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
           <h2 className="text-3xl sm:text-4xl font-ovo font-bold text-center mb-4">
             Key Features
           </h2>
-          <p className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-            isDarkMode ? "text-gray-300" : "text-gray-600"
-          }`}>
-            A comprehensive suite of tools designed for modern cryptocurrency payment processing
+          <p
+            className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
+              isDarkMode ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
+            A comprehensive suite of tools designed for modern cryptocurrency
+            payment processing
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -318,13 +376,17 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
                     : "bg-white border-gray-200 hover:border-purple-400/50"
                 } shadow-sm hover:shadow-lg transition-all duration-300`}
               >
-                <i className={`${feature.icon} text-3xl mb-4 block ${
-                  isDarkMode ? "text-cyan-400" : "text-purple-600"
-                }`}></i>
+                <i
+                  className={`${feature.icon} text-3xl mb-4 block ${
+                    isDarkMode ? "text-cyan-400" : "text-purple-600"
+                  }`}
+                ></i>
                 <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                <p className={`text-sm leading-relaxed ${
-                  isDarkMode ? "text-gray-300" : "text-gray-600"
-                }`}>
+                <p
+                  className={`text-sm leading-relaxed ${
+                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                  }`}
+                >
                   {feature.description}
                 </p>
               </motion.div>
@@ -334,9 +396,11 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
       </section>
 
       {/* Technical Highlights */}
-      <section className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
-        isDarkMode ? "bg-gray-900" : "bg-gray-50"
-      }`}>
+      <section
+        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+          isDarkMode ? "bg-gray-900" : "bg-gray-50"
+        }`}
+      >
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -359,14 +423,18 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
                   isDarkMode ? "bg-gray-800" : "bg-white"
                 } shadow-md`}
               >
-                <h3 className={`text-xl font-semibold mb-3 ${
-                  isDarkMode ? "text-cyan-400" : "text-purple-600"
-                }`}>
+                <h3
+                  className={`text-xl font-semibold mb-3 ${
+                    isDarkMode ? "text-cyan-400" : "text-purple-600"
+                  }`}
+                >
                   {highlight.title}
                 </h3>
-                <p className={`leading-relaxed ${
-                  isDarkMode ? "text-gray-300" : "text-gray-600"
-                }`}>
+                <p
+                  className={`leading-relaxed ${
+                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                  }`}
+                >
                   {highlight.description}
                 </p>
               </motion.div>
@@ -386,9 +454,11 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
           <h2 className="text-3xl sm:text-4xl font-ovo font-bold text-center mb-4">
             Challenges & Solutions
           </h2>
-          <p className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-            isDarkMode ? "text-gray-300" : "text-gray-600"
-          }`}>
+          <p
+            className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
+              isDarkMode ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
             Key technical challenges overcome during development
           </p>
 
@@ -407,34 +477,46 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
                 } shadow-md`}
               >
                 <div className="flex items-start gap-4">
-                  <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
-                    isDarkMode ? "bg-red-400/10" : "bg-red-100"
-                  }`}>
-                    <i className={`fa fa-exclamation-triangle ${
-                      isDarkMode ? "text-red-400" : "text-red-600"
-                    }`}></i>
+                  <div
+                    className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
+                      isDarkMode ? "bg-red-400/10" : "bg-red-100"
+                    }`}
+                  >
+                    <i
+                      className={`fa fa-exclamation-triangle ${
+                        isDarkMode ? "text-red-400" : "text-red-600"
+                      }`}
+                    ></i>
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold mb-2">
                       Challenge: {item.challenge}
                     </h3>
                     <div className="flex items-start gap-4 mt-3">
-                      <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
-                        isDarkMode ? "bg-green-400/10" : "bg-green-100"
-                      }`}>
-                        <i className={`fa fa-check-circle ${
-                          isDarkMode ? "text-green-400" : "text-green-600"
-                        }`}></i>
+                      <div
+                        className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
+                          isDarkMode ? "bg-green-400/10" : "bg-green-100"
+                        }`}
+                      >
+                        <i
+                          className={`fa fa-check-circle ${
+                            isDarkMode ? "text-green-400" : "text-green-600"
+                          }`}
+                        ></i>
                       </div>
                       <div className="flex-1">
-                        <h4 className={`font-medium mb-1 ${
-                          isDarkMode ? "text-green-400" : "text-green-600"
-                        }`}>
+                        <h4
+                          className={`font-medium mb-1 ${
+                            isDarkMode ? "text-green-400" : "text-green-600"
+                          }`}
+                        >
                           Solution:
                         </h4>
-                        <p className={`leading-relaxed ${
-                          isDarkMode ? "text-gray-300" : "text-gray-600"
-                        }`}>
+                        <p
+                          className={`leading-relaxed ${
+                            isDarkMode ? "text-gray-300" : "text-gray-600"
+                          }`}
+                        >
                           {item.solution}
                         </p>
                       </div>
@@ -448,9 +530,11 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
       </section>
 
       {/* Screenshots Section */}
-      <section className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
-        isDarkMode ? "bg-gray-900" : "bg-gray-50"
-      }`}>
+      <section
+        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+          isDarkMode ? "bg-gray-900" : "bg-gray-50"
+        }`}
+      >
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -458,7 +542,7 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
           viewport={{ once: true }}
         >
           <h2 className="text-3xl sm:text-4xl font-ovo font-bold text-center mb-12">
-            Application Screenshots
+            Application Overview
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -466,39 +550,45 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.95 }}
+                onClick={() => setActiveScreenshot(screenshot)}
+                whileHover={{ scale: 1.02 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`rounded-xl overflow-hidden shadow-lg ${
+                className={`rounded-xl overflow-hidden shadow-lg cursor-pointer ${
                   isDarkMode ? "bg-gray-800" : "bg-white"
                 }`}
               >
-                <div className={`aspect-video flex items-center justify-center ${
-                  isDarkMode ? "bg-gray-700" : "bg-gray-200"
-                }`}>
-                  <div className="text-center">
-                    <i className={`fa fa-image text-6xl mb-4 ${
-                      isDarkMode ? "text-gray-600" : "text-gray-400"
-                    }`}></i>
-                    <p className={`text-sm ${
-                      isDarkMode ? "text-gray-400" : "text-gray-500"
-                    }`}>
-                      Screenshot Placeholder
-                    </p>
-                  </div>
+                <div
+                  className={`relative aspect-video ${
+                    isDarkMode ? "bg-gray-700" : "bg-gray-200"
+                  }`}
+                >
+                  <Image
+                    src={screenshot.path}
+                    alt={screenshot.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
+
                 <div className="p-4">
-                  <h3 className="font-semibold text-center">{screenshot.title}</h3>
+                  <h3 className="font-semibold text-center">
+                    {screenshot.title}
+                  </h3>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          <p className={`text-center mt-8 text-sm ${
-            isDarkMode ? "text-gray-400" : "text-gray-500"
-          }`}>
+          <p
+            className={`text-center mt-8 text-sm ${
+              isDarkMode ? "text-gray-400" : "text-gray-500"
+            }`}
+          >
             <i className="fa fa-info-circle mr-2"></i>
-            Screenshots are representative of the application interface
+            Photos are representative of the application interface
           </p>
         </motion.div>
       </section>
@@ -515,24 +605,27 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
           <h2 className="text-3xl sm:text-4xl font-ovo font-bold mb-6">
             Interested in Learning More?
           </h2>
-          <p className={`mb-8 font-ovo ${
-            isDarkMode ? "text-gray-300" : "text-gray-600"
-          }`}>
-            Explore the comprehensive documentation or get in touch to discuss payment gateway solutions
+          <p
+            className={`mb-8 font-ovo ${
+              isDarkMode ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
+            Explore the comprehensive documentation or get in touch to discuss
+            payment gateway solutions
           </p>
-            <a
-              href="https://chainnative.gitbook.io/chainnative-docs"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 px-8 py-3 rounded-full border transition-all duration-300 ${
-                isDarkMode
-                  ? "border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900"
-                  : "border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
-              }`}
-            >
-              <i className="fa fa-book"></i>
-              Documentation
-            </a>
+          <a
+            href="https://chainnative.gitbook.io/chainnative-docs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex items-center gap-2 px-8 py-3 rounded-full border transition-all duration-300 ${
+              isDarkMode
+                ? "border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900"
+                : "border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
+            }`}
+          >
+            <i className="fa fa-book"></i>
+            Documentation
+          </a>
         </motion.div>
 
         {/* Logo */}
@@ -546,6 +639,57 @@ export default function ChainNativeMerchant({ isDarkMode = false }: ChainNativeM
           />
         </Link>
       </section>
+
+      {activeScreenshot && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setActiveScreenshot(null)}
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={(e) => e.stopPropagation()}
+            className={`relative w-full max-w-6xl rounded-xl overflow-hidden ${
+              isDarkMode ? "bg-gray-900" : "bg-white"
+            }`}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setActiveScreenshot(null)}
+              className={`absolute top-4 right-4 z-10 text-2xl hover:opacity-80 cursor-pointer`}
+              aria-label="Close modal"
+            >
+              ✕
+            </button>
+
+            {/* Image */}
+            <div className="relative w-full h-[80vh]">
+              <Image
+                src={activeScreenshot.path}
+                alt={activeScreenshot.title}
+                fill
+                className="object-contain"
+                sizes="100vw"
+                priority
+              />
+            </div>
+
+            {/* Title */}
+            <div
+              className={`p-4 text-center ${
+                isDarkMode ? "text-gray-300" : "text-gray-700"
+              }`}
+            >
+              <h3 className="font-semibold">{activeScreenshot.title}</h3>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 }

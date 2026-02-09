@@ -9,14 +9,21 @@ type ChainNativeAdminProps = {
   isDarkMode?: boolean;
 };
 
-export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdminProps) {
+export default function ChainNativeAdmin({
+  isDarkMode = false,
+}: ChainNativeAdminProps) {
   const [activeTab, setActiveTab] = useState("overview");
+  const [activeScreenshot, setActiveScreenshot] = useState<{
+    title: string;
+    path: string;
+  } | null>(null);
 
   const projectInfo = {
     title: "ChainNative Admin",
     subtitle: "Enterprise Payment Gateway Admin Panel",
-    description: "A sophisticated, microservice-based administrative platform for managing merchants, stores, invoices, and system-wide configurations. Built with modern architecture patterns including event-driven communication and real-time data synchronization.",
-    duration: "Development Period: June 2024 - December 2024",
+    description:
+      "A sophisticated, microservice-based administrative platform for managing merchants, stores, invoices, and system-wide configurations. Built with modern architecture patterns including event-driven communication and real-time data synchronization.",
+    duration: "Development Period: June 2025 - Present",
     role: "Full-Stack Developer",
     company: "CodeLab FZC LLC",
   };
@@ -38,89 +45,107 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
     {
       icon: "fa fa-users",
       title: "Merchant Management",
-      description: "Complete CRUD operations for merchant accounts including list view, add new merchants, edit details, password reset, and secure merchant removal with data integrity checks.",
+      description:
+        "Complete CRUD operations for merchant accounts including list view, add new merchants, edit details, password reset, and secure merchant removal with data integrity checks.",
     },
     {
       icon: "fa fa-store",
       title: "Store Creation & Management",
-      description: "Enable merchants to create and manage multiple stores with individual configurations, allowing each store to have unique payment settings and branding.",
+      description:
+        "Enable merchants to create and manage multiple stores with individual configurations, allowing each store to have unique payment settings and branding.",
     },
     {
       icon: "fa fa-building",
       title: "Store Administration",
-      description: "Comprehensive store management with listing, editing capabilities, rate configuration, invoice tracking, and customizable checkout appearance settings.",
+      description:
+        "Comprehensive store management with listing, editing capabilities, rate configuration, invoice tracking, and customizable checkout appearance settings.",
     },
     {
       icon: "fa fa-chart-line",
       title: "Exchange Rate Configuration",
-      description: "Dynamic rate management system for stores with real-time exchange rate updates, multi-currency support, and automated rate synchronization.",
+      description:
+        "Dynamic rate management system for stores with real-time exchange rate updates, multi-currency support, and automated rate synchronization.",
     },
     {
       icon: "fa fa-file-invoice-dollar",
       title: "Advanced Invoice System",
-      description: "Powerful invoice management with search by ID/amount, time-based filtering, status filtering, pagination, and comprehensive invoice lifecycle tracking.",
+      description:
+        "Powerful invoice management with search by ID/amount, time-based filtering, status filtering, pagination, and comprehensive invoice lifecycle tracking.",
     },
     {
       icon: "fa fa-credit-card",
       title: "Checkout Customization",
-      description: "Store-specific checkout appearance editor with branding options, color schemes, logo uploads, and preview functionality for merchant customization.",
+      description:
+        "Store-specific checkout appearance editor with branding options, color schemes, logo uploads, and preview functionality for merchant customization.",
     },
     {
       icon: "fa fa-envelope",
       title: "SMTP Server Configuration",
-      description: "System-wide email server settings management with support for multiple SMTP providers, authentication configuration, and email template management.",
+      description:
+        "System-wide email server settings management with support for multiple SMTP providers, authentication configuration, and email template management.",
     },
     {
       icon: "fa fa-cog",
       title: "Server Policies & Settings",
-      description: "Centralized system configuration including security policies, rate limiting, API throttling, session management, and global application settings.",
+      description:
+        "Centralized system configuration including security policies, rate limiting, API throttling, session management, and global application settings.",
     },
     {
       icon: "fa fa-key",
       title: "API Key Management",
-      description: "Secure API key generation, listing, and revocation system with permission scopes, usage tracking, and audit logging for API access control.",
+      description:
+        "Secure API key generation, listing, and revocation system with permission scopes, usage tracking, and audit logging for API access control.",
     },
     {
       icon: "fa fa-tasks",
       title: "Request Management",
-      description: "Monitor and manage system requests with filtering, status tracking, approval workflows, and comprehensive request history for operational oversight.",
+      description:
+        "Monitor and manage system requests with filtering, status tracking, approval workflows, and comprehensive request history for operational oversight.",
     },
     {
       icon: "fa fa-crown",
       title: "Subscription Management",
-      description: "Handle merchant subscription tiers, billing cycles, feature access control, and automated subscription renewal processes.",
+      description:
+        "Handle merchant subscription tiers, billing cycles, feature access control, and automated subscription renewal processes.",
     },
     {
       icon: "fa fa-shield-alt",
       title: "Security & Authentication",
-      description: "Advanced security features including password management, two-factor authentication (2FA), session control, and comprehensive security audit trails.",
+      description:
+        "Advanced security features including password management, two-factor authentication (2FA), session control, and comprehensive security audit trails.",
     },
   ];
 
   const technicalHighlights = [
     {
       title: "Microservice Architecture",
-      description: "Implemented separate microservices for user management and request processing, enabling independent scaling, deployment, and maintenance of critical system components.",
+      description:
+        "Implemented separate microservices for user management and request processing, enabling independent scaling, deployment, and maintenance of critical system components.",
     },
     {
       title: "Event-Driven Communication",
-      description: "Leveraged RabbitMQ message broker for asynchronous communication between microservices, ensuring loose coupling and high system resilience with guaranteed message delivery.",
+      description:
+        "Leveraged RabbitMQ message broker for asynchronous communication between microservices, ensuring loose coupling and high system resilience with guaranteed message delivery.",
     },
     {
       title: "Next.js Server Components",
-      description: "Utilized Next.js 14 with server-side rendering and server components for optimal performance, SEO benefits, and reduced client-side JavaScript bundle sizes.",
+      description:
+        "Utilized Next.js 14 with server-side rendering and server components for optimal performance, SEO benefits, and reduced client-side JavaScript bundle sizes.",
     },
     {
       title: "Prisma Type-Safe ORM",
-      description: "Implemented Prisma for type-safe database operations with automatic TypeScript generation, migration management, and optimized query performance across all microservices.",
+      description:
+        "Implemented Prisma for type-safe database operations with automatic TypeScript generation, migration management, and optimized query performance across all microservices.",
     },
     {
       title: "Shadcn Component Library",
-      description: "Built consistent, accessible UI with Shadcn/ui components on top of Tailwind CSS, ensuring a cohesive design system and accelerated development workflow.",
+      description:
+        "Built consistent, accessible UI with Shadcn/ui components on top of Tailwind CSS, ensuring a cohesive design system and accelerated development workflow.",
     },
     {
       title: "RESTful & GraphQL APIs",
-      description: "Designed comprehensive APIs using NestJS with proper versioning, documentation via Swagger, authentication middleware, and robust error handling mechanisms.",
+      description:
+        "Designed comprehensive APIs using NestJS with proper versioning, documentation via Swagger, authentication middleware, and robust error handling mechanisms.",
     },
   ];
 
@@ -163,23 +188,28 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
   const challenges = [
     {
       challenge: "Microservice Data Consistency",
-      solution: "Implemented eventual consistency patterns with RabbitMQ event sourcing, saga patterns for distributed transactions, and compensating transactions to ensure data integrity across services.",
+      solution:
+        "Implemented eventual consistency patterns with RabbitMQ event sourcing, saga patterns for distributed transactions, and compensating transactions to ensure data integrity across services.",
     },
     {
       challenge: "Real-time Admin Dashboard Updates",
-      solution: "Developed Server-Sent Events (SSE) integration with Next.js for live invoice status updates, merchant activity monitoring, and system health metrics without constant polling.",
+      solution:
+        "Developed Server-Sent Events (SSE) integration with Next.js for live invoice status updates, merchant activity monitoring, and system health metrics without constant polling.",
     },
     {
       challenge: "Complex Merchant-Store Relationship",
-      solution: "Designed a flexible multi-tenancy system allowing merchants to manage multiple stores with isolated configurations while maintaining centralized billing and reporting.",
+      solution:
+        "Designed a flexible multi-tenancy system allowing merchants to manage multiple stores with isolated configurations while maintaining centralized billing and reporting.",
     },
     {
       challenge: "Secure API Key Management",
-      solution: "Created a robust API key lifecycle management system with hashed storage, automatic expiration, rate limiting per key, and comprehensive access logging for security auditing.",
+      solution:
+        "Created a robust API key lifecycle management system with hashed storage, automatic expiration, rate limiting per key, and comprehensive access logging for security auditing.",
     },
     {
       challenge: "SMTP Configuration Validation",
-      solution: "Built a real-time SMTP testing framework that validates server credentials, tests email delivery, and provides detailed diagnostic information before saving configurations.",
+      solution:
+        "Built a real-time SMTP testing framework that validates server credentials, tests email delivery, and provides detailed diagnostic information before saving configurations.",
     },
   ];
 
@@ -231,16 +261,30 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
   ];
 
   const screenshots = [
-    { title: "Merchant Dashboard", path: "/screenshots/admin-merchant-list.png" },
-    { title: "Store Management", path: "/screenshots/admin-store-management.png" },
-    { title: "Invoice Listing", path: "/screenshots/admin-invoices.png" },
-    { title: "API Key Management", path: "/screenshots/admin-api-keys.png" },
-    { title: "SMTP Configuration", path: "/screenshots/admin-smtp-settings.png" },
-    { title: "Server Settings", path: "/screenshots/admin-server-settings.png" },
+    {
+      title: "Merchant Listing",
+      path: "/projects/chainnative-admin/admin-merchant-list.png",
+    },
+    {
+      title: "Store Management",
+      path: "/projects/chainnative-admin/admin-store-management.png",
+    },
+    { title: "Invoice Listing", path: "/projects/chainnative-admin/admin-invoices.png" },
+    { title: "API Key Management", path: "/projects/chainnative-admin/admin-api-keys.png" },
+    {
+      title: "SMTP Configuration",
+      path: "/projects/chainnative-admin/admin-smtp-settings.png",
+    },
+    {
+      title: "Server Settings",
+      path: "/projects/chainnative-admin/admin-server-settings.png",
+    },
   ];
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? "bg-gray-950 text-gray-100" : "bg-white text-gray-900"}`}>
+    <div
+      className={`min-h-screen ${isDarkMode ? "bg-gray-950 text-gray-100" : "bg-white text-gray-900"}`}
+    >
       {/* Logo */}
       <div className="flex p-5 justify-center">
         <Link href="/#home" aria-label="Go to home section">
@@ -253,7 +297,7 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
           />
         </Link>
       </div>
-      
+
       {/* Hero Section */}
       <section className="relative w-full px-6 sm:px-8 md:px-[12%] py-20 md:py-32">
         <motion.div
@@ -268,9 +312,13 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-6"
           >
-            <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium ${
-              isDarkMode ? "bg-cyan-400/10 text-cyan-400" : "bg-purple-100 text-purple-600"
-            }`}>
+            <span
+              className={`inline-block px-4 py-2 rounded-full text-sm font-medium ${
+                isDarkMode
+                  ? "bg-cyan-400/10 text-cyan-400"
+                  : "bg-purple-100 text-purple-600"
+              }`}
+            >
               {projectInfo.company}
             </span>
           </motion.div>
@@ -278,10 +326,12 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-ovo font-bold mb-6">
             {projectInfo.title}
           </h1>
-          
-          <p className={`text-xl sm:text-2xl mb-4 font-medium ${
-            isDarkMode ? "text-cyan-400" : "text-purple-600"
-          }`}>
+
+          <p
+            className={`text-xl sm:text-2xl mb-4 font-medium ${
+              isDarkMode ? "text-cyan-400" : "text-purple-600"
+            }`}
+          >
             {projectInfo.subtitle}
           </p>
 
@@ -290,15 +340,23 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <span className={`px-4 py-2 rounded-full text-sm ${
-              isDarkMode ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-700"
-            }`}>
+            <span
+              className={`px-4 py-2 rounded-full text-sm ${
+                isDarkMode
+                  ? "bg-gray-800 text-gray-300"
+                  : "bg-gray-100 text-gray-700"
+              }`}
+            >
               <i className="fa fa-briefcase mr-2"></i>
               {projectInfo.role}
             </span>
-            <span className={`px-4 py-2 rounded-full text-sm ${
-              isDarkMode ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-700"
-            }`}>
+            <span
+              className={`px-4 py-2 rounded-full text-sm ${
+                isDarkMode
+                  ? "bg-gray-800 text-gray-300"
+                  : "bg-gray-100 text-gray-700"
+              }`}
+            >
               <i className="fa fa-calendar mr-2"></i>
               {projectInfo.duration}
             </span>
@@ -332,9 +390,11 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
       </section>
 
       {/* Technologies Section */}
-      <section className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
-        isDarkMode ? "bg-gray-900" : "bg-gray-50"
-      }`}>
+      <section
+        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+          isDarkMode ? "bg-gray-900" : "bg-gray-50"
+        }`}
+      >
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -344,7 +404,7 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
           <h2 className="text-3xl sm:text-4xl font-ovo font-bold text-center mb-12">
             Technology Stack
           </h2>
-          
+
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
             {technologies.map((tech, index) => (
               <motion.div
@@ -360,9 +420,11 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
                 } shadow-sm hover:shadow-md transition-all duration-300`}
               >
                 <p className="font-medium text-sm mb-1">{tech.name}</p>
-                <p className={`text-xs ${
-                  isDarkMode ? "text-gray-400" : "text-gray-500"
-                }`}>
+                <p
+                  className={`text-xs ${
+                    isDarkMode ? "text-gray-400" : "text-gray-500"
+                  }`}
+                >
                   {tech.category}
                 </p>
               </motion.div>
@@ -382,10 +444,13 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
           <h2 className="text-3xl sm:text-4xl font-ovo font-bold text-center mb-4">
             Administrative Features
           </h2>
-          <p className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-            isDarkMode ? "text-gray-300" : "text-gray-600"
-          }`}>
-            Comprehensive tools for managing merchants, stores, and system-wide configurations
+          <p
+            className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
+              isDarkMode ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
+            Comprehensive tools for managing merchants, stores, and system-wide
+            configurations
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -403,13 +468,17 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
                     : "bg-white border-gray-200 hover:border-purple-400/50"
                 } shadow-sm hover:shadow-lg transition-all duration-300`}
               >
-                <i className={`${feature.icon} text-3xl mb-4 block ${
-                  isDarkMode ? "text-cyan-400" : "text-purple-600"
-                }`}></i>
+                <i
+                  className={`${feature.icon} text-3xl mb-4 block ${
+                    isDarkMode ? "text-cyan-400" : "text-purple-600"
+                  }`}
+                ></i>
                 <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                <p className={`text-sm leading-relaxed ${
-                  isDarkMode ? "text-gray-300" : "text-gray-600"
-                }`}>
+                <p
+                  className={`text-sm leading-relaxed ${
+                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                  }`}
+                >
                   {feature.description}
                 </p>
               </motion.div>
@@ -419,9 +488,11 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
       </section>
 
       {/* Architecture Features */}
-      <section className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
-        isDarkMode ? "bg-gray-900" : "bg-gray-50"
-      }`}>
+      <section
+        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+          isDarkMode ? "bg-gray-900" : "bg-gray-50"
+        }`}
+      >
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -431,10 +502,13 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
           <h2 className="text-3xl sm:text-4xl font-ovo font-bold text-center mb-4">
             Microservice Architecture
           </h2>
-          <p className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-            isDarkMode ? "text-gray-300" : "text-gray-600"
-          }`}>
-            Independent, scalable services communicating via event-driven architecture
+          <p
+            className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
+              isDarkMode ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
+            Independent, scalable services communicating via event-driven
+            architecture
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -449,23 +523,31 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
                   isDarkMode ? "bg-gray-800" : "bg-white"
                 } shadow-lg`}
               >
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${
-                  isDarkMode ? "bg-cyan-400/10" : "bg-purple-100"
-                }`}>
-                  <i className={`${arch.icon} text-2xl ${
-                    isDarkMode ? "text-cyan-400" : "text-purple-600"
-                  }`}></i>
+                <div
+                  className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${
+                    isDarkMode ? "bg-cyan-400/10" : "bg-purple-100"
+                  }`}
+                >
+                  <i
+                    className={`${arch.icon} text-2xl ${
+                      isDarkMode ? "text-cyan-400" : "text-purple-600"
+                    }`}
+                  ></i>
                 </div>
                 <h3 className="text-xl font-semibold mb-4">{arch.title}</h3>
                 <ul className="space-y-2">
                   {arch.points.map((point, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <i className={`fa fa-check-circle mt-1 text-sm ${
-                        isDarkMode ? "text-cyan-400" : "text-purple-600"
-                      }`}></i>
-                      <span className={`text-sm ${
-                        isDarkMode ? "text-gray-300" : "text-gray-600"
-                      }`}>
+                      <i
+                        className={`fa fa-check-circle mt-1 text-sm ${
+                          isDarkMode ? "text-cyan-400" : "text-purple-600"
+                        }`}
+                      ></i>
+                      <span
+                        className={`text-sm ${
+                          isDarkMode ? "text-gray-300" : "text-gray-600"
+                        }`}
+                      >
                         {point}
                       </span>
                     </li>
@@ -503,20 +585,26 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
                     : "bg-white border-gray-200"
                 } shadow-md`}
               >
-                <h3 className={`text-xl font-semibold mb-4 ${
-                  isDarkMode ? "text-cyan-400" : "text-purple-600"
-                }`}>
+                <h3
+                  className={`text-xl font-semibold mb-4 ${
+                    isDarkMode ? "text-cyan-400" : "text-purple-600"
+                  }`}
+                >
                   {module.title}
                 </h3>
                 <ul className="space-y-2">
                   {module.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <i className={`fa fa-angle-right mt-1 ${
-                        isDarkMode ? "text-cyan-400" : "text-purple-600"
-                      }`}></i>
-                      <span className={`text-sm ${
-                        isDarkMode ? "text-gray-300" : "text-gray-600"
-                      }`}>
+                      <i
+                        className={`fa fa-angle-right mt-1 ${
+                          isDarkMode ? "text-cyan-400" : "text-purple-600"
+                        }`}
+                      ></i>
+                      <span
+                        className={`text-sm ${
+                          isDarkMode ? "text-gray-300" : "text-gray-600"
+                        }`}
+                      >
                         {feature}
                       </span>
                     </li>
@@ -529,9 +617,11 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
       </section>
 
       {/* Technical Highlights */}
-      <section className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
-        isDarkMode ? "bg-gray-900" : "bg-gray-50"
-      }`}>
+      <section
+        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+          isDarkMode ? "bg-gray-900" : "bg-gray-50"
+        }`}
+      >
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -554,14 +644,18 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
                   isDarkMode ? "bg-gray-800" : "bg-white"
                 } shadow-md`}
               >
-                <h3 className={`text-xl font-semibold mb-3 ${
-                  isDarkMode ? "text-cyan-400" : "text-purple-600"
-                }`}>
+                <h3
+                  className={`text-xl font-semibold mb-3 ${
+                    isDarkMode ? "text-cyan-400" : "text-purple-600"
+                  }`}
+                >
                   {highlight.title}
                 </h3>
-                <p className={`leading-relaxed ${
-                  isDarkMode ? "text-gray-300" : "text-gray-600"
-                }`}>
+                <p
+                  className={`leading-relaxed ${
+                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                  }`}
+                >
                   {highlight.description}
                 </p>
               </motion.div>
@@ -581,10 +675,13 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
           <h2 className="text-3xl sm:text-4xl font-ovo font-bold text-center mb-4">
             Challenges & Solutions
           </h2>
-          <p className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-            isDarkMode ? "text-gray-300" : "text-gray-600"
-          }`}>
-            Complex problems solved during the development of this microservice architecture
+          <p
+            className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
+              isDarkMode ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
+            Complex problems solved during the development of this microservice
+            architecture
           </p>
 
           <div className="space-y-6 max-w-4xl mx-auto">
@@ -602,34 +699,46 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
                 } shadow-md`}
               >
                 <div className="flex items-start gap-4">
-                  <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
-                    isDarkMode ? "bg-red-400/10" : "bg-red-100"
-                  }`}>
-                    <i className={`fa fa-exclamation-triangle ${
-                      isDarkMode ? "text-red-400" : "text-red-600"
-                    }`}></i>
+                  <div
+                    className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
+                      isDarkMode ? "bg-red-400/10" : "bg-red-100"
+                    }`}
+                  >
+                    <i
+                      className={`fa fa-exclamation-triangle ${
+                        isDarkMode ? "text-red-400" : "text-red-600"
+                      }`}
+                    ></i>
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold mb-2">
                       Challenge: {item.challenge}
                     </h3>
                     <div className="flex items-start gap-4 mt-3">
-                      <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
-                        isDarkMode ? "bg-green-400/10" : "bg-green-100"
-                      }`}>
-                        <i className={`fa fa-check-circle ${
-                          isDarkMode ? "text-green-400" : "text-green-600"
-                        }`}></i>
+                      <div
+                        className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
+                          isDarkMode ? "bg-green-400/10" : "bg-green-100"
+                        }`}
+                      >
+                        <i
+                          className={`fa fa-check-circle ${
+                            isDarkMode ? "text-green-400" : "text-green-600"
+                          }`}
+                        ></i>
                       </div>
                       <div className="flex-1">
-                        <h4 className={`font-medium mb-1 ${
-                          isDarkMode ? "text-green-400" : "text-green-600"
-                        }`}>
+                        <h4
+                          className={`font-medium mb-1 ${
+                            isDarkMode ? "text-green-400" : "text-green-600"
+                          }`}
+                        >
                           Solution:
                         </h4>
-                        <p className={`leading-relaxed ${
-                          isDarkMode ? "text-gray-300" : "text-gray-600"
-                        }`}>
+                        <p
+                          className={`leading-relaxed ${
+                            isDarkMode ? "text-gray-300" : "text-gray-600"
+                          }`}
+                        >
                           {item.solution}
                         </p>
                       </div>
@@ -642,10 +751,12 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
         </motion.div>
       </section>
 
-      {/* Screenshots Section */}
-      <section className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
-        isDarkMode ? "bg-gray-900" : "bg-gray-50"
-      }`}>
+      {/* photos Section */}
+      <section
+        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+          isDarkMode ? "bg-gray-900" : "bg-gray-50"
+        }`}
+      >
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -653,7 +764,7 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
           viewport={{ once: true }}
         >
           <h2 className="text-3xl sm:text-4xl font-ovo font-bold text-center mb-12">
-            Admin Panel Screenshots
+            ChainNative Admin Panel Overview
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -661,39 +772,45 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.95 }}
+                onClick={() => setActiveScreenshot(screenshot)}
+                whileHover={{ scale: 1.02 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`rounded-xl overflow-hidden shadow-lg ${
+                className={`rounded-xl overflow-hidden shadow-lg cursor-pointer ${
                   isDarkMode ? "bg-gray-800" : "bg-white"
                 }`}
               >
-                <div className={`aspect-video flex items-center justify-center ${
-                  isDarkMode ? "bg-gray-700" : "bg-gray-200"
-                }`}>
-                  <div className="text-center">
-                    <i className={`fa fa-image text-6xl mb-4 ${
-                      isDarkMode ? "text-gray-600" : "text-gray-400"
-                    }`}></i>
-                    <p className={`text-sm ${
-                      isDarkMode ? "text-gray-400" : "text-gray-500"
-                    }`}>
-                      Screenshot Placeholder
-                    </p>
-                  </div>
+                <div
+                  className={`relative aspect-video ${
+                    isDarkMode ? "bg-gray-700" : "bg-gray-200"
+                  }`}
+                >
+                  <Image
+                    src={screenshot.path}
+                    alt={screenshot.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
+
                 <div className="p-4">
-                  <h3 className="font-semibold text-center">{screenshot.title}</h3>
+                  <h3 className="font-semibold text-center">
+                    {screenshot.title}
+                  </h3>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          <p className={`text-center mt-8 text-sm ${
-            isDarkMode ? "text-gray-400" : "text-gray-500"
-          }`}>
+          <p
+            className={`text-center mt-8 text-sm ${
+              isDarkMode ? "text-gray-400" : "text-gray-500"
+            }`}
+          >
             <i className="fa fa-info-circle mr-2"></i>
-            Screenshots showcase the admin panel interface and key features
+            Photos showcase the admin panel interface and key features
           </p>
         </motion.div>
       </section>
@@ -710,22 +827,25 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
           <h2 className="text-3xl sm:text-4xl font-ovo font-bold mb-6">
             Explore the Complete System
           </h2>
-          <p className={`mb-8 font-ovo ${
-            isDarkMode ? "text-gray-300" : "text-gray-600"
-          }`}>
-            See how the merchant and admin systems work together to create a comprehensive payment gateway solution
+          <p
+            className={`mb-8 font-ovo ${
+              isDarkMode ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
+            See how the merchant and admin systems work together to create a
+            comprehensive payment gateway solution
           </p>
-            <Link
-              href="/projects/chainnative/merchant"
-              className={`inline-flex items-center gap-2 px-8 py-3 rounded-full border transition-all duration-300 ${
-                isDarkMode
-                  ? "border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900"
-                  : "border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
-              }`}
-            >
-              <i className="fa fa-store"></i>
-              View Merchant System
-            </Link>
+          <Link
+            href="/projects/chainnative/merchant"
+            className={`inline-flex items-center gap-2 px-8 py-3 rounded-full border transition-all duration-300 ${
+              isDarkMode
+                ? "border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900"
+                : "border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
+            }`}
+          >
+            <i className="fa fa-store"></i>
+            View Merchant System
+          </Link>
         </motion.div>
 
         {/* Logo */}
@@ -739,6 +859,57 @@ export default function ChainNativeAdmin({ isDarkMode = false }: ChainNativeAdmi
           />
         </Link>
       </section>
+
+      {activeScreenshot && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setActiveScreenshot(null)}
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={(e) => e.stopPropagation()}
+            className={`relative w-full max-w-6xl rounded-xl overflow-hidden ${
+              isDarkMode ? "bg-gray-900" : "bg-white"
+            }`}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setActiveScreenshot(null)}
+              className={`absolute top-4 right-4 z-10 text-2xl hover:opacity-80 cursor-pointer`}
+              aria-label="Close modal"
+            >
+              ✕
+            </button>
+
+            {/* Image */}
+            <div className="relative w-full h-[80vh]">
+              <Image
+                src={activeScreenshot.path}
+                alt={activeScreenshot.title}
+                fill
+                className="object-contain"
+                sizes="100vw"
+                priority
+              />
+            </div>
+
+            {/* Title */}
+            <div
+              className={`p-4 text-center ${
+                isDarkMode ? "text-gray-300" : "text-gray-700"
+              }`}
+            >
+              <h3 className="font-semibold">{activeScreenshot.title}</h3>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 }

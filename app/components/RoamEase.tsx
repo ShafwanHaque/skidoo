@@ -17,7 +17,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
     subtitle: "Windows Desktop Travel Management System",
     description:
       "A comprehensive desktop application built with C# for managing travel services including hotel bookings, food services, and traveler information. Features complete user authentication, role-based access control, and SMTP integration for password recovery.",
-    duration: "Development Period: Academic Project 2023",
+    duration: "Development Period: December 2022 (approximately 20 days)",
     role: "Solo Developer",
     type: "Windows Application",
     githubUrl: "https://github.com/ShafwanHaque/RoamEase",
