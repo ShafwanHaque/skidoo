@@ -1,5 +1,49 @@
 @import "tailwindcss";
-@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+/* Self-hosted FontAwesome with font-display: swap */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap; /* ← CRITICAL FIX for Lighthouse */
+  src: url('/fonts/fa-solid-900.woff2') format('woff2');
+}
+
+.fa-solid,
+.fas {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+
+/* If you use regular icons, add this too: */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/fa-regular-400.woff2') format('woff2');
+}
+
+.fa-regular,
+.far {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+}
+
+/* If you use brand icons, add this too: */
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/fa-brands-400.woff2') format('woff2');
+}
+
+.fa-brands,
+.fab {
+  font-family: 'Font Awesome 6 Brands';
+  font-weight: 400;
+}
 
 /* ==================== ROOT VARIABLES ==================== */
 :root {

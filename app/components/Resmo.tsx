@@ -288,12 +288,12 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
   ];
 
   const screenshots = [
-    { title: "Landing Page", path: "/projects/resmo/resmo-landing.png" },
-    { title: "PC Navigation Menu", path: "/projects/resmo/resmo-menu-pc.png" },
-    { title: "Mobile Menu View", path: "/projects/resmo/resmo-menu-mobile.png" },
-    { title: "Event Search Page", path: "/projects/resmo/resmo-event-search.png" },
-    { title: "Admin Event Panel", path: "/projects/resmo/resmo-admin-events.png" },
-    { title: "Add Event Form", path: "/projects/resmo/resmo-add-event.png" },
+    { title: "Landing Page", path: "/projects/resmo/resmo-landing.WebP" },
+    { title: "PC Navigation Menu", path: "/projects/resmo/resmo-menu-pc.WebP" },
+    { title: "Mobile Menu View", path: "/projects/resmo/resmo-menu-mobile.WebP" },
+    { title: "Event Search Page", path: "/projects/resmo/resmo-event-search.WebP" },
+    { title: "Admin Event Panel", path: "/projects/resmo/resmo-admin-events.WebP" },
+    { title: "Add Event Form", path: "/projects/resmo/resmo-add-event.WebP" },
   ];
 
   return (

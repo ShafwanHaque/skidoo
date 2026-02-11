@@ -5,15 +5,21 @@ import "./globals.css";
 const outfit = Outfit({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  display: "swap",
-  variable: "--font-outfit"
+  display: "swap", // ✓ Already correct!
+  variable: "--font-outfit",
+  fallback: ['system-ui', 'arial'], // ADD: Reduce layout shift
+  adjustFontFallback: true, // ADD: Match fallback font metrics
+  preload: true, // ADD: Prioritize loading
 });
 
 const ovo = Ovo({
   subsets: ["latin"],
   weight: ["400"],
-  display: "swap",
-  variable: "--font-ovo"
+  display: "swap", // ✓ Already correct!
+  variable: "--font-ovo",
+  fallback: ['Georgia', 'serif'], // ADD: Reduce layout shift
+  adjustFontFallback: true, // ADD: Match fallback font metrics
+  preload: true, // ADD: Prioritize loading
 });
 
 // Viewport configuration to prevent mobile zoom
@@ -92,7 +98,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "your-google-verification-code",
-  }
+  },
+  // ADD: Web App Manifest
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -105,12 +113,10 @@ export default function RootLayout({
       <head>
         {/* Additional SEO meta tags */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.WebP" />
         
-        {/* Preconnect to external domains for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* CRITICAL FIX: Change to manifest.json instead of site.webmanifest */}
+        <link rel="manifest" href="/manifest.json" />
         
         {/* Structured Data for SEO */}
         <script

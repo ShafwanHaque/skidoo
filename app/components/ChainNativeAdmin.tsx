@@ -263,21 +263,21 @@ export default function ChainNativeAdmin({
   const screenshots = [
     {
       title: "Merchant Listing",
-      path: "/projects/chainnative-admin/admin-merchant-list.png",
+      path: "/projects/chainnative-admin/admin-merchant-list.WebP",
     },
     {
       title: "Store Management",
-      path: "/projects/chainnative-admin/admin-store-management.png",
+      path: "/projects/chainnative-admin/admin-store-management.WebP",
     },
-    { title: "Invoice Listing", path: "/projects/chainnative-admin/admin-invoices.png" },
-    { title: "API Key Management", path: "/projects/chainnative-admin/admin-api-keys.png" },
+    { title: "Invoice Listing", path: "/projects/chainnative-admin/admin-invoices.WebP" },
+    { title: "API Key Management", path: "/projects/chainnative-admin/admin-api-keys.WebP" },
     {
       title: "SMTP Configuration",
-      path: "/projects/chainnative-admin/admin-smtp-settings.png",
+      path: "/projects/chainnative-admin/admin-smtp-settings.WebP",
     },
     {
       title: "Server Settings",
-      path: "/projects/chainnative-admin/admin-server-settings.png",
+      path: "/projects/chainnative-admin/admin-server-settings.WebP",
     },
   ];
 

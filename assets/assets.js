@@ -153,7 +153,7 @@ export const projectsData = {
     {
       title: "ChainNative (Merchant)",
       description: "Full-Stack Payment Gateway System",
-      bgImage: "/work-1.png",
+      bgImage: "/work-1.WebP",
       technologies: ["ASP.NET Core", "PostgreSQL"],
       liveUrl: "/projects/chainnative/merchant",
       // githubUrl: "#",
@@ -161,7 +161,7 @@ export const projectsData = {
     {
       title: "ChainNative (Admin)",
       description: "Full-Stack Payment Gateway System",
-      bgImage: "/work-2.png",
+      bgImage: "/work-2.WebP",
       technologies: ["NestJS", "Next.js", "PostgreSQL"],
       liveUrl: "/projects/chainnative/admin",
       // githubUrl: "#",
@@ -169,7 +169,7 @@ export const projectsData = {
     {
       title: "RESMO",
       description: "A Multi-School Japanese School Management System",
-      bgImage: "/work-3.png",
+      bgImage: "/work-3.WebP",
       technologies: ["Laravel,", "Vue.js", "MySQL"],
       liveUrl: "/projects/resmo",
       githubUrl: "#",
@@ -177,7 +177,7 @@ export const projectsData = {
     {
       title: "RoamEase",
       description: "Windows application for Travelers Management System",
-      bgImage: "/work-4.png",
+      bgImage: "/work-4.WebP",
       technologies: ["C#", "MS SQL Server"],
       liveUrl: "/projects/roamease",
       githubUrl: "#",

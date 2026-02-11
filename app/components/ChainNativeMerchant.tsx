@@ -175,16 +175,16 @@ export default function ChainNativeMerchant({
   const screenshots = [
     {
       title: "Dashboard Overview",
-      path: "/projects/chainnative-merchant/merchant-dashboard.png",
+      path: "/projects/chainnative-merchant/merchant-dashboard.WebP",
     },
     {
       title: "Store Settings",
-      path: "/projects/chainnative-merchant/merchant-store-settings.png",
+      path: "/projects/chainnative-merchant/merchant-store-settings.WebP",
     },
-    { title: "Checkout Interface", path: "/projects/chainnative-merchant/merchant-checkout.png" },
-    { title: "Invoice Management", path: "/projects/chainnative-merchant/merchant-invoices.png" },
-    { title: "Subscription Plan", path: "/projects/chainnative-merchant/subscription-list.png" },
-    { title: "Reporting Analytics", path: "/projects/chainnative-merchant/merchant-reports.png" },
+    { title: "Checkout Interface", path: "/projects/chainnative-merchant/merchant-checkout.WebP" },
+    { title: "Invoice Management", path: "/projects/chainnative-merchant/merchant-invoices.WebP" },
+    { title: "Subscription Plan", path: "/projects/chainnative-merchant/subscription-list.WebP" },
+    { title: "Reporting Analytics", path: "/projects/chainnative-merchant/merchant-reports.WebP" },
   ];
 
   return (
