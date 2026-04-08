@@ -114,6 +114,7 @@ const nextConfig: NextConfig = {
   },
 
   // ===== WEBPACK OPTIMIZATIONS =====
+  turbopack: {},
   webpack: (config, { dev, isServer }) => {
     // Production optimizations
     if (!dev) {
