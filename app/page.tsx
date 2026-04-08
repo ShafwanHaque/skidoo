@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Experience from "./components/Exprience";
 import Link from "next/link";
+import Blogs from "./components/Blogs";
 
 export default function Page() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -63,6 +64,7 @@ export default function Page() {
         <Skills isDarkMode={isDarkMode} />
         <Projects isDarkMode={isDarkMode} />
         <Experience isDarkMode={isDarkMode} />
+        <Blogs isDarkMode={isDarkMode} />
         <Contact isDarkMode={isDarkMode} />
       </main>
 

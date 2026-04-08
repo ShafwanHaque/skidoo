@@ -4,11 +4,11 @@ import { motion } from "motion/react";
 import { projectsData } from "@/assets/assets";
 import Link from "next/link";
 
-type ProjectsProps = {
+type BlogsProps = {
   isDarkMode: boolean;
 };
 
-export const Projects = ({ isDarkMode }: ProjectsProps) => {
+export const Blogs = ({ isDarkMode }: BlogsProps) => {
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -133,4 +133,4 @@ export const Projects = ({ isDarkMode }: ProjectsProps) => {
   );
 };
 
-export default Projects;
+export default Blogs;
