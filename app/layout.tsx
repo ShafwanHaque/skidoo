@@ -78,13 +78,6 @@ export const metadata: Metadata = {
       }
     ]
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Shafwanul Haque Chowdhury | Full-Stack Developer",
-    description: "Full-stack web developer specializing in NestJS, Next.js, ASP.NET Core, and modern web technologies",
-    images: ["/og-image.jpg"],
-    creator: "@yourtwitter"
-  },
   robots: {
     index: true,
     follow: true,
@@ -97,7 +90,7 @@ export const metadata: Metadata = {
     }
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "SwFTs6V0ZNG63WUIsaT3tHYv0f3IclwFBtm_s7X9vaE",
   },
   // ADD: Web App Manifest
   manifest: "/manifest.json",
