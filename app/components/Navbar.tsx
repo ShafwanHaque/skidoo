@@ -166,10 +166,11 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
           <a href="#home" aria-label="Go to home section">
             <Image
               src={isDarkMode ? assets.logo_dark : assets.logo}
-              className="w-28 md:w-30 cursor-pointer"
+              className="w-28 md:w-30 cursor-pointer h-auto"
               alt={`${personalInfo.name} logo`}
               width={160}
               height={40}
+              priority
             />
           </a>
         </div>
@@ -230,7 +231,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
               }`}
               aria-label="Connect on LinkedIn"
             >
-              <span className="font-ovo">Let's connect</span>
+              <span className="font-ovo">Let&apos;s connect</span>
               <i className="fa fa-arrow-right rotate-[-45deg]" aria-hidden="true"></i>
             </a>
           </div>

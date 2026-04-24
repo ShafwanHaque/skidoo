@@ -47,7 +47,7 @@ const About = ({ isDarkMode }: AboutProps) => {
           <Image
             src={userImage}
             alt="Shafwanul Haque Chowdhury"
-            className="w-full rounded-3xl shadow-lg"
+            className="w-full h-auto rounded-3xl shadow-lg"
             width={384}
             height={480}
             priority

@@ -47,65 +47,53 @@ export const Projects = ({ isDarkMode }: ProjectsProps) => {
         className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6"
       >
         {projectsData.projects.map((project, index) => (
-          <Link
-            key={index}
-            href={project.liveUrl}
-            rel="noopener noreferrer"
-            className="block"
-          >
-            <motion.li
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-              key={index}
-              className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group overflow-hidden"
-              style={{ backgroundImage: `url(${project.bgImage})` }}
-            >
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <motion.li
+      key={index}
+      whileHover={{ scale: 1.05 }}
+      transition={{ duration: 0.3 }}
+      className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group overflow-hidden"
+      style={{ backgroundImage: `url(${project.bgImage})` }}
+    >
+      <Link
+        href={project.liveUrl}
+        rel="noopener noreferrer"
+        className="absolute inset-0 z-10"
+        aria-label={`View ${project.title} project`}
+      />
 
-              {/* Project Info Card */}
-              <div className="bg-white w-11/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-4 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 shadow-lg">
-                <div className="flex-1">
-                  <h3 className="font-semibold text-black text-lg mb-1">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-gray-700 mb-2">
-                    {project.description}
-                  </p>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-1 mt-2">
-                    {project.technologies.map((tech, idx) => (
-                      <span
-                        key={idx}
-                        className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+      {/* Project Info Card */}
+      <div className="bg-white w-11/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-4 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 shadow-lg">
+        <div className="flex-1">
+          <h3 className="font-semibold text-black text-lg mb-1">
+            {project.title}
+          </h3>
+          <p className="text-sm text-gray-700 mb-2">
+            {project.description}
+          </p>
+          <div className="flex flex-wrap gap-1 mt-2">
+            {project.technologies.map((tech, idx) => (
+              <span key={idx} className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
 
-                {/* Action Button */}
-                <Link
-                  href={project.liveUrl}
-                  rel="noopener noreferrer"
-                  className={`border rounded-full border-black w-10 h-10 flex-shrink-0 flex items-center justify-center shadow-[2px_2px_0_#000]  transition ml-3 ${
-                    isDarkMode
-                      ? "group-hover:bg-cyan-400"
-                      : "group-hover:bg-purple-600"
-                  }`}
-                  aria-label={`View ${project.title} project`}
-                >
-                  <i
-                    className="fa fa-arrow-right text-black"
-                    aria-hidden="true"
-                  ></i>
-                </Link>
-              </div>
-            </motion.li>
-          </Link>
-        ))}
+        {/* Arrow indicator (decorative, the whole card is already the link) */}
+        <span
+          className={`border rounded-full border-black w-10 h-10 flex-shrink-0 flex items-center justify-center shadow-[2px_2px_0_#000] transition ml-3 ${
+            isDarkMode ? "group-hover:bg-cyan-400" : "group-hover:bg-purple-600"
+          }`}
+          aria-hidden="true"
+        >
+          <i className="fa fa-arrow-right text-black" />
+        </span>
+      </div>
+    </motion.li>
+  ))}
       </motion.ul>
 
       {/* Show More Button */}

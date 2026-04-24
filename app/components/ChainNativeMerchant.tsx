@@ -12,7 +12,7 @@ type ChainNativeMerchantProps = {
 export default function ChainNativeMerchant({
   isDarkMode = false,
 }: ChainNativeMerchantProps) {
-  const [activeTab, setActiveTab] = useState("overview");
+  // const [activeTab, setActiveTab] = useState("overview");
   const [activeScreenshot, setActiveScreenshot] = useState<{
     title: string;
     path: string;
@@ -196,10 +196,11 @@ export default function ChainNativeMerchant({
         <Link href="/#home" aria-label="Go to home section">
           <Image
             src={isDarkMode ? assets.logo_dark : assets.logo}
-            className="w-28 md:w-30 cursor-pointer"
+            className="w-28 md:w-30 h-auto cursor-pointer"
             alt={`${personalInfo.name} logo`}
             width={160}
             height={40}
+            priority
           />
         </Link>
       </div>
@@ -633,9 +634,10 @@ export default function ChainNativeMerchant({
           <Image
             src={isDarkMode ? assets.logo_dark : assets.logo}
             alt={`${personalInfo.name} logo`}
-            className="w-36 mx-auto mb-4"
+            className="w-36 h-auto mx-auto mb-4"
             width={144}
             height={36}
+            priority
           />
         </Link>
       </section>

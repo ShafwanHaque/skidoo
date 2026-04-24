@@ -45,9 +45,10 @@ const Footer = ({ isDarkMode }: FooterProps) => {
           <Image
             src={isDarkMode ? assets.logo_dark : assets.logo}
             alt={`${personalInfo.name} logo`}
-            className="w-36 mx-auto mb-4"
+            className="w-36 mx-auto mb-4 h-auto"
             width={144}
             height={36}
+            priority
           />
         </Link>
 

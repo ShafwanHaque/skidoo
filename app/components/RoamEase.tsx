@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +10,7 @@ type RoamEaseProps = {
 };
 
 export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
-  const [activeTab, setActiveTab] = useState("overview");
+  // const [activeTab, setActiveTab] = useState("overview");
 
   const projectInfo = {
     title: "RoamEase",
@@ -319,10 +319,11 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
         <Link href="/#home" aria-label="Go to home section">
           <Image
             src={isDarkMode ? assets.logo_dark : assets.logo}
-            className="w-28 md:w-30 cursor-pointer"
+            className="w-28 md:w-30 h-auto cursor-pointer"
             alt={`${personalInfo.name} logo`}
             width={160}
             height={40}
+            priority
           />
         </Link>
       </div>
@@ -887,9 +888,10 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
           <Image
             src={isDarkMode ? assets.logo_dark : assets.logo}
             alt={`${personalInfo.name} logo`}
-            className="w-36 mx-auto mb-4"
+            className="w-36 h-auto mx-auto mb-4"
             width={144}
             height={36}
+            priority
           />
         </Link>
       </section>

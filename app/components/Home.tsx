@@ -19,19 +19,22 @@ const Home = ({ isDarkMode }: HomeProps) => {
     >
       {/* Profile Image — scaled per breakpoint */}
       <motion.div
-        initial={{ scale: 0 }}
-        whileInView={{ scale: 1 }}
-        transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-      >
-        <Image
-          src={profileImage}
-          alt={`${personalInfo.name} - ${personalInfo.title}`}
-          className="rounded-full w-28 sm:w-32 md:w-36 lg:w-40"
-          priority
-          width={160}
-          height={160}
-        />
-      </motion.div>
+  initial={{ scale: 0 }}
+  whileInView={{ scale: 1 }}
+  transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+  className="w-28 sm:w-32 md:w-36 lg:w-40"
+>
+  <div className="relative w-full aspect-square rounded-full overflow-hidden">
+    <Image
+      src={profileImage}
+      alt={`${personalInfo.name} - ${personalInfo.title}`}
+      fill
+      className="object-cover"
+      priority
+      sizes="(max-width: 640px) 112px, (max-width: 768px) 128px, (max-width: 1024px) 144px, 160px"
+    />
+  </div>
+</motion.div>
 
       {/* Greeting */}
       <motion.h2
