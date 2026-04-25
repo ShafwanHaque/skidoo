@@ -86,7 +86,7 @@ const Experience = ({ isDarkMode }: ExperienceProps) => {
                   </h3>
                   <p
                     className={`text-xl mt-1 ${
-                      isDarkMode ? "text-gray-300" : "text-gray-700"
+                      isDarkMode ? "text-gray-200" : "text-gray-700"
                     }`}
                   >
                     {exp.company}
@@ -123,7 +123,7 @@ const Experience = ({ isDarkMode }: ExperienceProps) => {
               <div className="mb-4">
                 <h4
                   className={`font-semibold mb-3 ${
-                    isDarkMode ? "text-gray-300" : "text-gray-700"
+                    isDarkMode ? "text-gray-200" : "text-gray-700"
                   }`}
                 >
                   Key Responsibilities:
@@ -152,7 +152,7 @@ const Experience = ({ isDarkMode }: ExperienceProps) => {
               <div>
                 <h4
                   className={`font-semibold mb-3 ${
-                    isDarkMode ? "text-gray-300" : "text-gray-700"
+                    isDarkMode ? "text-gray-200" : "text-gray-700"
                   }`}
                 >
                   Technologies Used:
@@ -163,7 +163,7 @@ const Experience = ({ isDarkMode }: ExperienceProps) => {
                       key={idx}
                       className={`px-3 py-1 rounded-full text-sm ${
                         isDarkMode
-                          ? "bg-gray-700 text-gray-300"
+                          ? "bg-gray-700 text-gray-200"
                           : "bg-gray-200 text-gray-700"
                       }`}
                     >

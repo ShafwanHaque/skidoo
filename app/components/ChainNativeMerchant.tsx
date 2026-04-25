@@ -206,7 +206,7 @@ export default function ChainNativeMerchant({
       </div>
 
       {/* Hero Section */}
-      <section className="relative w-full px-6 sm:px-8 md:px-[12%] py-20 md:py-32">
+      <section className="relative w-full px-6 sm:px-8 md:px-[12%] py-20 md:py-32 h-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -250,7 +250,7 @@ export default function ChainNativeMerchant({
             <span
               className={`px-4 py-2 rounded-full text-sm ${
                 isDarkMode
-                  ? "bg-gray-800 text-gray-300"
+                  ? "bg-gray-800 text-gray-200"
                   : "bg-gray-100 text-gray-700"
               }`}
             >
@@ -260,7 +260,7 @@ export default function ChainNativeMerchant({
             <span
               className={`px-4 py-2 rounded-full text-sm ${
                 isDarkMode
-                  ? "bg-gray-800 text-gray-300"
+                  ? "bg-gray-800 text-gray-200"
                   : "bg-gray-100 text-gray-700"
               }`}
             >
@@ -287,7 +287,7 @@ export default function ChainNativeMerchant({
               href="/#projects"
               className={`inline-flex items-center gap-2 px-6 py-3 rounded-full border transition-all duration-300 ${
                 isDarkMode
-                  ? "border-gray-700 text-gray-300 hover:bg-gray-800"
+                  ? "border-gray-700 text-gray-200 hover:bg-gray-800"
                   : "border-gray-300 text-gray-700 hover:bg-gray-100"
               }`}
             >
@@ -355,7 +355,7 @@ export default function ChainNativeMerchant({
           </h2>
           <p
             className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             A comprehensive suite of tools designed for modern cryptocurrency
@@ -385,7 +385,7 @@ export default function ChainNativeMerchant({
                 <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
                 <p
                   className={`text-sm leading-relaxed ${
-                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                    isDarkMode ? "text-gray-200" : "text-gray-600"
                   }`}
                 >
                   {feature.description}
@@ -433,7 +433,7 @@ export default function ChainNativeMerchant({
                 </h3>
                 <p
                   className={`leading-relaxed ${
-                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                    isDarkMode ? "text-gray-200" : "text-gray-600"
                   }`}
                 >
                   {highlight.description}
@@ -457,7 +457,7 @@ export default function ChainNativeMerchant({
           </h2>
           <p
             className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             Key technical challenges overcome during development
@@ -515,7 +515,7 @@ export default function ChainNativeMerchant({
                         </h4>
                         <p
                           className={`leading-relaxed ${
-                            isDarkMode ? "text-gray-300" : "text-gray-600"
+                            isDarkMode ? "text-gray-200" : "text-gray-600"
                           }`}
                         >
                           {item.solution}
@@ -608,7 +608,7 @@ export default function ChainNativeMerchant({
           </h2>
           <p
             className={`mb-8 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             Explore the comprehensive documentation or get in touch to discuss
@@ -684,7 +684,7 @@ export default function ChainNativeMerchant({
             {/* Title */}
             <div
               className={`p-4 text-center ${
-                isDarkMode ? "text-gray-300" : "text-gray-700"
+                isDarkMode ? "text-gray-200" : "text-gray-700"
               }`}
             >
               <h3 className="font-semibold">{activeScreenshot.title}</h3>

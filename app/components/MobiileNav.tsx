@@ -21,7 +21,7 @@ const MobileNav = ({ isOpen, onClose, isDarkMode, activeSection }: MobileNavProp
           ? "text-cyan-400 font-semibold"
           : "text-purple-600 font-semibold"
         : isDarkMode
-        ? "text-gray-300 hover:text-cyan-400"
+        ? "text-gray-200 hover:text-cyan-400"
         : "text-gray-700 hover:text-purple-600"
     }`;
   };
@@ -48,7 +48,7 @@ const MobileNav = ({ isOpen, onClose, isDarkMode, activeSection }: MobileNavProp
             onClick={onClose}
             className={`absolute right-6 top-4 p-1.5 rounded-full transition-colors ${
               isDarkMode
-                ? "hover:bg-gray-700 text-gray-300"
+                ? "hover:bg-gray-700 text-gray-200"
                 : "hover:bg-gray-200 text-gray-700"
             }`}
             aria-label="Close navigation menu"

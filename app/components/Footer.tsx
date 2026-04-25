@@ -57,7 +57,7 @@ const Footer = ({ isDarkMode }: FooterProps) => {
           href={`mailto:${personalInfo.email}`}
           className={`inline-flex items-center gap-2 mb-8 transition-colors ${
             isDarkMode
-              ? "text-gray-300 hover:text-cyan-400"
+              ? "text-gray-200 hover:text-cyan-400"
               : "text-gray-700 hover:text-purple-600"
           }`}
           aria-label={`Send email to ${personalInfo.email}`}
@@ -89,7 +89,7 @@ const Footer = ({ isDarkMode }: FooterProps) => {
                   rel="noopener noreferrer"
                   className={`text-2xl transition-colors ${
                     isDarkMode
-                      ? "text-gray-300 hover:text-cyan-400"
+                      ? "text-gray-200 hover:text-cyan-400"
                       : "text-gray-700 hover:text-purple-600"
                   }`}
                   aria-label={link.ariaLabel}

@@ -359,7 +359,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
             <span
               className={`px-4 py-2 rounded-full text-sm ${
                 isDarkMode
-                  ? "bg-gray-800 text-gray-300"
+                  ? "bg-gray-800 text-gray-200"
                   : "bg-gray-100 text-gray-700"
               }`}
             >
@@ -369,7 +369,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
             <span
               className={`px-4 py-2 rounded-full text-sm ${
                 isDarkMode
-                  ? "bg-gray-800 text-gray-300"
+                  ? "bg-gray-800 text-gray-200"
                   : "bg-gray-100 text-gray-700"
               }`}
             >
@@ -396,7 +396,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
               href="/#projects"
               className={`inline-flex items-center gap-2 px-6 py-3 rounded-full border transition-all duration-300 ${
                 isDarkMode
-                  ? "border-gray-700 text-gray-300 hover:bg-gray-800"
+                  ? "border-gray-700 text-gray-200 hover:bg-gray-800"
                   : "border-gray-300 text-gray-700 hover:bg-gray-100"
               }`}
             >
@@ -464,7 +464,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
           </h2>
           <p
             className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             Comprehensive school management capabilities for Japanese
@@ -494,7 +494,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
                 <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
                 <p
                   className={`text-sm leading-relaxed ${
-                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                    isDarkMode ? "text-gray-200" : "text-gray-600"
                   }`}
                 >
                   {feature.description}
@@ -522,7 +522,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
           </h2>
           <p
             className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             Dedicated interfaces for administrators, teachers, students, and
@@ -563,7 +563,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
                       ></i>
                       <span
                         className={`text-sm ${
-                          isDarkMode ? "text-gray-300" : "text-gray-600"
+                          isDarkMode ? "text-gray-200" : "text-gray-600"
                         }`}
                       >
                         {feature}
@@ -590,7 +590,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
           </h2>
           <p
             className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             Key features and modules I developed during the internship
@@ -619,7 +619,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
                 </h3>
                 <p
                   className={`mb-4 ${
-                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                    isDarkMode ? "text-gray-200" : "text-gray-600"
                   }`}
                 >
                   {contribution.description}
@@ -634,7 +634,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
                       ></i>
                       <span
                         className={`text-sm ${
-                          isDarkMode ? "text-gray-300" : "text-gray-600"
+                          isDarkMode ? "text-gray-200" : "text-gray-600"
                         }`}
                       >
                         {task}
@@ -685,7 +685,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
                 </h3>
                 <p
                   className={`leading-relaxed ${
-                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                    isDarkMode ? "text-gray-200" : "text-gray-600"
                   }`}
                 >
                   {highlight.description}
@@ -709,7 +709,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
           </h2>
           <p
             className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             Technical challenges encountered and overcome during development
@@ -767,7 +767,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
                         </h4>
                         <p
                           className={`leading-relaxed ${
-                            isDarkMode ? "text-gray-300" : "text-gray-600"
+                            isDarkMode ? "text-gray-200" : "text-gray-600"
                           }`}
                         >
                           {item.solution}
@@ -860,7 +860,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
           </h2>
           <p
             className={`mb-8 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             Visit the live platform to see the school management system in
@@ -935,7 +935,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
               {/* Title */}
               <div
                 className={`p-4 text-center ${
-                  isDarkMode ? "text-gray-300" : "text-gray-700"
+                  isDarkMode ? "text-gray-200" : "text-gray-700"
                 }`}
               >
                 <h3 className="font-semibold">{activeScreenshot.title}</h3>

@@ -42,7 +42,7 @@ const About = ({ isDarkMode }: AboutProps) => {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="w-full sm:w-64 md:w-72 lg:w-80 xl:w-96 flex-shrink-0 rounded-3xl order-1 lg:order-2"
+          className="w-full h-auto sm:w-64 md:w-72 lg:w-80 xl:w-96 shrink-0 rounded-3xl order-1 lg:order-2"
         >
           <Image
             src={userImage}
@@ -78,8 +78,8 @@ const About = ({ isDarkMode }: AboutProps) => {
                 key={index}
                 className={`border-[0.5px] border-gray-400 rounded-xl p-4 sm:p-5 cursor-pointer transform transition-all duration-500 hover:-translate-y-1 ${
                   isDarkMode
-                    ? "hover:bg-gradient-to-r hover:from-gray-800 hover:to-gray-900 text-gray-100"
-                    : "hover:bg-gradient-to-r hover:from-purple-100 hover:to-blue-200 text-gray-700 hover:text-gray-900"
+                    ? "hover:bg-linear-to-r hover:from-gray-800 hover:to-gray-900 text-gray-100"
+                    : "hover:bg-linear-to-r hover:from-purple-100 hover:to-blue-200 text-gray-700 hover:text-gray-900"
                 } shadow-[2px_2px_0_rgba(0,0,0,0.1)] hover:shadow-[4px_4px_0_rgba(0,0,0,0.2)]`}
               >
                 <i
@@ -97,7 +97,7 @@ const About = ({ isDarkMode }: AboutProps) => {
                 </h3>
                 <p
                   className={`text-xs leading-relaxed ${
-                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                    isDarkMode ? "text-gray-200" : "text-gray-600"
                   }`}
                 >
                   {card.description}

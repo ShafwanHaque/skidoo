@@ -120,7 +120,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
 
     return `${baseClass} ${
       isDarkMode
-        ? "text-gray-300 hover:text-cyan-400"
+        ? "text-gray-200 hover:text-cyan-400"
         : "text-gray-700 hover:text-purple-600"
     }`;
   };

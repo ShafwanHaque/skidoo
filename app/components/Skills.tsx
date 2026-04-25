@@ -88,7 +88,7 @@ const Skills = ({ isDarkMode }: SkillsProps) => {
 
             <p
               className={`text-sm leading-relaxed mb-4 ${
-                isDarkMode ? "text-gray-300" : "text-gray-600"
+                isDarkMode ? "text-gray-200" : "text-gray-600"
               }`}
             >
               {skill.description}
@@ -135,7 +135,7 @@ const Skills = ({ isDarkMode }: SkillsProps) => {
                 onClick={closeModal}
                 className={`absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
                   isDarkMode
-                    ? "hover:bg-gray-700 text-gray-300"
+                    ? "hover:bg-gray-700 text-gray-200"
                     : "hover:bg-gray-100 text-gray-600"
                 }`}
                 aria-label="Close modal"
@@ -155,7 +155,7 @@ const Skills = ({ isDarkMode }: SkillsProps) => {
 
               <p
                 className={`leading-relaxed ${
-                  isDarkMode ? "text-gray-300" : "text-gray-700"
+                  isDarkMode ? "text-gray-200" : "text-gray-700"
                 }`}
               >
                 {selectedSkill.brief}
