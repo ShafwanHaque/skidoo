@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, Ovo } from "next/font/google";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 
 const outfit = Outfit({
@@ -156,6 +157,7 @@ export default function RootLayout({
       >
         {children}
       </body>
+      <Analytics />
     </html>
   );
 }
