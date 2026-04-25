@@ -36,10 +36,13 @@ const Contact = ({ isDarkMode }: ContactProps) => {
 
     try {
       // EmailJS configuration
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
-
+      // const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+      // const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+      // const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
+      // Temporarily hardcode to test
+      const serviceId = "service_spwepts";
+      const templateId = "template_7jxxwyi";
+      const publicKey = "vHmAFoRfrLtp8g69F";
 
       if (!serviceId || !templateId || !publicKey) {
         throw new Error("EmailJS configuration is missing");
