@@ -47,7 +47,7 @@ export default function ThemeProvider() {
         <Skills isDarkMode={isDarkMode} />
         <Projects isDarkMode={isDarkMode} />
         <Experience isDarkMode={isDarkMode} />
-        <Blogs isDarkMode={isDarkMode} />
+        {/* <Blogs isDarkMode={isDarkMode} /> */}
         <Contact isDarkMode={isDarkMode} />
       </main>
       <Footer isDarkMode={isDarkMode} />
