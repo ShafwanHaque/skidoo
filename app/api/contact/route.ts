@@ -55,7 +55,7 @@ export async function POST(req: Request) {
     });
 
     await transporter.sendMail({
-      from: `"Portfolio Contact" <${process.env.GMAIL_USER}>`,
+      from: `"Portfolio Contact" <${process.env.GMAIL_USER} ?? 'shafwanulhaquechowdhury@gmail.com'>`,
       replyTo: `"${name}" <${email}>`,
       to: "shafwanulhaquechowdhury@gmail.com",
       subject: `[Portfolio] ${subject}`,
