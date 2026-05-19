@@ -133,7 +133,7 @@ const Skills = ({ isDarkMode }: SkillsProps) => {
               {/* Close Button */}
               <button
                 onClick={closeModal}
-                className={`absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
+                className={`absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center transition-colors cursor-pointer ${
                   isDarkMode
                     ? "hover:bg-gray-700 text-gray-200"
                     : "hover:bg-gray-100 text-gray-600"

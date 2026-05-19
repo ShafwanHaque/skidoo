@@ -7,7 +7,14 @@ type ContactProps = {
   isDarkMode: boolean;
 };
 
-const LOCAL_KEY = "contact_retry_after"; // stores a retryAfter timestamp (ms)
+type ContactApiResponse = {
+  rateLimited?: boolean;
+  retryAfter?: number;
+  error?: string;
+  success?: boolean;
+};
+
+const LOCAL_KEY = "contact_retry_after"; 
 
 function formatCountdown(ms: number): string {
   const totalSeconds = Math.ceil(ms / 1000);
@@ -50,13 +57,19 @@ const Contact = ({ isDarkMode }: ContactProps) => {
     setCooldownRemaining(0);
   }, []);
 
-  // Replace the localStorage-only checkRateLimit with this:
   useEffect(() => {
     const checkWithServer = async () => {
       try {
         const res = await fetch("/api/contact");
-        const data = await res.json();
-        if (data.rateLimited) {
+        let data: ContactApiResponse = {};
+        try {
+          data = (await res.json()) as ContactApiResponse;
+        } catch {
+          checkRateLimit();
+          return;
+        }
+
+        if (data.rateLimited && data.retryAfter) {
           const remaining = data.retryAfter - Date.now();
           localStorage.setItem(LOCAL_KEY, String(data.retryAfter));
           setCooldownTotal(remaining);
@@ -67,7 +80,6 @@ const Contact = ({ isDarkMode }: ContactProps) => {
           setIsRateLimited(false);
         }
       } catch {
-        // fallback to localStorage if server unreachable
         checkRateLimit();
       }
     };
@@ -116,12 +128,16 @@ const Contact = ({ isDarkMode }: ContactProps) => {
         body: JSON.stringify(formData),
       });
 
-      const data = await res.json();
+      let data: ContactApiResponse = {};
+      try {
+        data = (await res.json()) as ContactApiResponse;
+      } catch {
+        throw new Error(`Server error ${res.status}`);
+      }
 
-      if (res.status === 429) {
-        const retryAfter: number = data.retryAfter;
-        const remaining = retryAfter - Date.now();
-        localStorage.setItem(LOCAL_KEY, String(retryAfter));
+      if (res.status === 429 && data.retryAfter) {
+        const remaining = data.retryAfter - Date.now();
+        localStorage.setItem(LOCAL_KEY, String(data.retryAfter));
         setCooldownTotal(remaining);
         setCooldownRemaining(remaining);
         setIsRateLimited(true);
@@ -132,13 +148,13 @@ const Contact = ({ isDarkMode }: ContactProps) => {
 
       if (!res.ok) throw new Error(data.error ?? "Unknown error");
 
-      // Success — lock UI based on server's retryAfter
-      const retryAfter: number = data.retryAfter;
-      const remaining = retryAfter - Date.now();
-      localStorage.setItem(LOCAL_KEY, String(retryAfter));
-      setCooldownTotal(remaining);
-      setCooldownRemaining(remaining);
-      setIsRateLimited(true);
+      if (data.retryAfter) {
+        const remaining = data.retryAfter - Date.now();
+        localStorage.setItem(LOCAL_KEY, String(data.retryAfter));
+        setCooldownTotal(remaining);
+        setCooldownRemaining(remaining);
+        setIsRateLimited(true);
+      }
 
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
