@@ -412,7 +412,7 @@ const Contact = ({ isDarkMode }: ContactProps) => {
             />
           </div>
 
-          {isRateLimited && (
+          {/* {isRateLimited && (
             <div
               className={`p-4 rounded-lg ${isDarkMode ? "bg-yellow-900/30 border border-yellow-700/50" : "bg-yellow-50 border border-yellow-200"}`}
             >
@@ -440,7 +440,7 @@ const Contact = ({ isDarkMode }: ContactProps) => {
                 {formatCountdown(cooldownRemaining)} remaining
               </span>
             </div>
-          )}
+          )} */}
 
           {submitStatus === "success" && (
             <div className="p-4 rounded-lg bg-green-100 text-green-700 flex items-center gap-2">
