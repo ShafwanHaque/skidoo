@@ -743,7 +743,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
               >
                 <div className="flex items-start gap-4">
                   <div
-                    className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
+                    className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center ${
                       isDarkMode ? "bg-red-400/10" : "bg-red-100"
                     }`}
                   >
@@ -759,7 +759,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
                     </h3>
                     <div className="flex items-start gap-4 mt-3">
                       <div
-                        className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
+                        className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center ${
                           isDarkMode ? "bg-green-400/10" : "bg-green-100"
                         }`}
                       >

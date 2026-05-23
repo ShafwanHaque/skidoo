@@ -177,7 +177,7 @@ const Contact = ({ isDarkMode }: ContactProps) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="contact"
-      className="w-full px-6 sm:px-8 md:px-[12%] py-16 sm:py-20 scroll-mt-20 overflow-x-hidden"
+      className="w-full px-5 sm:px-8 md:px-[12%] py-16 sm:py-20 scroll-mt-20 overflow-x-hidden"
       aria-labelledby="contact-heading"
     >
       <motion.h2
