@@ -74,8 +74,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
+        width: 1424,
+        height: 752,
         alt: "Shafwanul Haque Chowdhury - Full-Stack Developer"
       }
     ]
@@ -104,51 +104,56 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        {/* Additional SEO meta tags */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.WebP" />
-        
-        {/* CRITICAL FIX: Change to manifest.json instead of site.webmanifest */}
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <link rel="manifest" href="/manifest.json" />
-        
-        {/* Structured Data for SEO */}
+
+        {/* Set theme class synchronously before first paint to prevent flash and content blocking */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem('theme'),p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&p))document.documentElement.classList.add('dark')}catch(e){}`
+          }}
+        />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Shafwanul Haque Chowdhury",
-              "url": "https://shafwanulhaquechowdhury.vercel.app",
-              "jobTitle": "Full-Stack Web Developer",
-              "worksFor": {
-                "@type": "Organization",
-                "name": "CodeLab FZC LLC"
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Shafwanul Haque Chowdhury",
+                "url": "https://shafwanulhaquechowdhury.vercel.app",
+                "jobTitle": "Full-Stack Web Developer",
+                "worksFor": {
+                  "@type": "Organization",
+                  "name": "CodeLab FZC LLC"
+                },
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Dhaka",
+                  "addressCountry": "Bangladesh"
+                },
+                "email": "shafwanulhaquechowdhury@gmail.com",
+                "sameAs": [
+                  "https://www.linkedin.com/in/shafwanul-haque-chowdhury",
+                  "https://github.com/shafwanHaque"
+                ],
+                "knowsAbout": [
+                  "NestJS", "Next.js", "ASP.NET Core", "Vue.js", "Laravel",
+                  "TypeScript", "JavaScript", "Full-Stack Development", "Web Development"
+                ]
               },
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Dhaka",
-                "addressCountry": "Bangladesh"
-              },
-              "email": "shafwanulhaquechowdhury@gmail.com",
-              "sameAs": [
-                "https://www.linkedin.com/in/shafwanul-haque-chowdhury",
-                "https://github.com/shafwanHaque"
-              ],
-              "knowsAbout": [
-                "NestJS",
-                "Next.js",
-                "ASP.NET Core",
-                "Vue.js",
-                "Laravel",
-                "TypeScript",
-                "JavaScript",
-                "Full-Stack Development",
-                "Web Development"
-              ]
-            })
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Shafwanul Haque Chowdhury Portfolio",
+                "url": "https://shafwanulhaquechowdhury.vercel.app",
+                "description": "Full-stack web developer portfolio showcasing projects, skills, and professional experience."
+              }
+            ])
           }}
         />
       </head>
@@ -156,8 +161,8 @@ export default function RootLayout({
         className={`${outfit.variable} ${ovo.variable} font-outfit antialiased leading-8 overflow-x-hidden`}
       >
         {children}
+        <Analytics />
       </body>
-      <Analytics />
     </html>
   );
 }

@@ -12,7 +12,6 @@ import Blogs from "./Blogs";
 
 export default function ThemeProvider() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -20,23 +19,12 @@ export default function ThemeProvider() {
     const shouldUseDarkMode = savedTheme === "dark" || (!savedTheme && prefersDark);
     setIsDarkMode(shouldUseDarkMode);
     document.documentElement.classList.toggle("dark", shouldUseDarkMode);
-    setIsLoading(false);
   }, []);
 
   useEffect(() => {
-    if (!isLoading) {
-      document.documentElement.classList.toggle("dark", isDarkMode);
-      localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-    }
-  }, [isDarkMode, isLoading]);
-
-  if (isLoading) {
-    return (
-      <div className="w-full h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-600"></div>
-      </div>
-    );
-  }
+    document.documentElement.classList.toggle("dark", isDarkMode);
+    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+  }, [isDarkMode]);
 
   return (
     <>
