@@ -15,7 +15,7 @@ export const Projects = ({ isDarkMode }: ProjectsProps) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="projects"
-      className="w-full px-[12%] py-10 md:py-20 scroll-mt-20"
+      className="w-full px-5 sm:px-8 md:px-[12%] py-10 sm:py-14 md:py-20 scroll-mt-20"
       aria-labelledby="projects-heading"
     >
       {/* Section Title */}
@@ -24,7 +24,7 @@ export const Projects = ({ isDarkMode }: ProjectsProps) => {
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="text-center text-5xl font-ovo mb-8"
+        className="text-center text-3xl sm:text-4xl md:text-5xl font-ovo mb-8"
       >
         Featured Projects
       </motion.h2>
@@ -44,7 +44,7 @@ export const Projects = ({ isDarkMode }: ProjectsProps) => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.7 }}
-        className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5 sm:gap-6"
       >
         {projectsData.projects.map((project, index) => (
     <motion.li

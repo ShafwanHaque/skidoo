@@ -148,7 +148,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
 
       {/* Navigation Bar */}
       <nav
-        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-3 flex items-center justify-between z-50
+        className={`w-full fixed px-4 sm:px-6 lg:px-8 xl:px-[8%] py-3 flex items-center justify-between z-50
         transition-transform duration-300 ease-in-out
         ${isNavbarVisible ? "translate-y-0" : "-translate-y-full"}
         ${
@@ -177,7 +177,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
 
         {/* Desktop Navigation */}
         <ul
-          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-8 py-2.5 transition-all duration-300 ${
+          className={`hidden md:flex items-center gap-4 lg:gap-7 xl:gap-8 rounded-full px-5 lg:px-8 py-2.5 text-sm lg:text-base transition-all duration-300 ${
             isScrolled
               ? ""
               : isDarkMode

@@ -185,7 +185,7 @@ const Contact = ({ isDarkMode }: ContactProps) => {
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="text-center text-5xl font-ovo mb-8"
+        className="text-center text-3xl sm:text-4xl md:text-5xl font-ovo mb-8"
       >
         Get In Touch
       </motion.h2>

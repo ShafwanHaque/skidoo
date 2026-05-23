@@ -304,35 +304,6 @@ body {
 
 /* ==================== RESPONSIVE UTILITIES ==================== */
 
-/* Mobile First Adjustments */
-@media screen and (max-width: 400px) {
-  #home {
-    padding-top: 9rem;
-  }
-  
-  /* Ensure text is readable on small screens */
-  body {
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  /* Reduce heading sizes on mobile */
-  h1 {
-    font-size: 2rem !important;
-  }
-  
-  h2 {
-    font-size: 1.75rem !important;
-  }
-  
-  /* Adjust padding for mobile */
-  section {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-}
-
 @media screen and (min-width: 768px) {
   body {
     font-size: 16px;

@@ -27,7 +27,7 @@ const Skills = ({ isDarkMode }: SkillsProps) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="skills"
-      className="w-full px-[12%] py-10 md:py-20 scroll-mt-20"
+      className="w-full px-5 sm:px-8 md:px-[12%] py-10 sm:py-14 md:py-20 scroll-mt-20"
       aria-labelledby="skills-heading"
     >
       {/* Section Title */}
@@ -36,7 +36,7 @@ const Skills = ({ isDarkMode }: SkillsProps) => {
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="text-center text-5xl font-ovo mb-8"
+        className="text-center text-3xl sm:text-4xl md:text-5xl font-ovo mb-8"
       >
         Skills and Expertise
       </motion.h2>
@@ -56,14 +56,14 @@ const Skills = ({ isDarkMode }: SkillsProps) => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.7 }}
-        className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6 my-10"
+        className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5 sm:gap-6 my-10"
       >
         {skillsData.skills.map((skill, index) => (
           <motion.li
             onClick={() => openModal(skill.title, skill.brief)}
             whileHover={{ scale: 1.05 }}
             key={index}
-            className={`border border-gray-400 rounded-lg px-8 py-12 cursor-pointer transform transition-all duration-500 hover:-translate-y-1 ${
+            className={`border border-gray-400 rounded-lg px-5 py-8 sm:px-8 sm:py-12 cursor-pointer transform transition-all duration-500 hover:-translate-y-1 ${
               isDarkMode
                 ? "hover:bg-gradient-to-r hover:from-gray-800 hover:to-gray-900 text-gray-100 hover:text-white"
                 : "hover:bg-gradient-to-r hover:from-purple-100 hover:to-blue-200 text-gray-700 hover:text-gray-900"

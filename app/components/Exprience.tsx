@@ -15,7 +15,7 @@ const Experience = ({ isDarkMode }: ExperienceProps) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="experience"
-      className="w-full px-[12%] py-10 md:py-20 scroll-mt-20"
+      className="w-full px-5 sm:px-8 md:px-[12%] py-10 sm:py-14 md:py-20 scroll-mt-20"
       aria-labelledby="experience-heading"
     >
       {/* Section Title */}
@@ -24,7 +24,7 @@ const Experience = ({ isDarkMode }: ExperienceProps) => {
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="text-center text-5xl font-ovo mb-8"
+        className="text-center text-3xl sm:text-4xl md:text-5xl font-ovo mb-8"
       >
         Work Experience
       </motion.h2>
@@ -52,7 +52,7 @@ const Experience = ({ isDarkMode }: ExperienceProps) => {
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
-            className={`relative border-l-4 pl-8 pb-8 ${
+            className={`relative border-l-4 pl-6 sm:pl-8 pb-8 ${
               isDarkMode ? "border-cyan-400" : "border-purple-600"
             }`}
           >

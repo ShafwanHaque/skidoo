@@ -77,7 +77,7 @@ export const assets = {
 // ==================== PERSONAL INFO ====================
 export const personalInfo = {
   name: "Shafwanul Haque Chowdhury",
-  title: "Full-Stack Web Developer",
+  title: "Software Engineer",
   location: "Dhaka, Bangladesh",
   email: "shafwanulhaquechowdhury@gmail.com",
   linkedin: "https://www.linkedin.com/in/shafwanul-haque-chowdhury",
@@ -88,67 +88,67 @@ export const personalInfo = {
 // ==================== HOME SECTION ====================
 export const homeData = {
   greeting: "Hi! I'm Shafwanul Haque Chowdhury",
-  title: "Full-stack web developer based in Bangladesh.",
-  description: "Full-stack developer from Dhaka, Bangladesh — building real-world solutions since June 2024 at ",
-  company: "CodeLab FZC LLC"
+  title: "Software Engineer based in Bangladesh.",
+  description: "Full-stack developer from Dhaka, Bangladesh — building scalable real-world solutions since June 2024 at",
+  company: " CodeLab FZC LLC"
 };
 
 // ==================== ABOUT SECTION ====================
 export const aboutData = {
-  description: "I'm a passionate full-stack developer with hands-on industry experience, working alongside senior engineers to deliver scalable, real-world applications. I enjoy solving complex problems in collaborative teams while focusing on clean, efficient, and high-quality code.",
+  description: "I'm a passionate Software Engineer with hands-on industry experience, working alongside senior engineers to deliver scalable, real-world applications. I enjoy solving complex problems in collaborative environments while focusing on clean, efficient, and maintainable code.",
   infoCards: [
     {
       icon: "fa fa-graduation-cap",
       title: "Education",
-      description: "Bachelor of Science in Computer Science & Engineering from American International University-Bangladesh (AIUB), Dhaka, Bangladesh.",
+      description: "Bachelor of Science in Computer Science & Engineering from American International University-Bangladesh (AIUB).",
     },
     {
       icon: "fa fa-briefcase",
       title: "Current Role",
-      description: "Software Engineer at CodeLab FZC LLC (UAE-based) in Dhaka, Bangladesh, working primarily on projects for Japanese clients.",
+      description: "Software Engineer at CodeLab FZC LLC (UAE-based) in Dhaka, Bangladesh, working primarily on systems for Japanese markets.",
     },
     {
       icon: "fa fa-person-hiking",
       title: "Hobbies & Interests",
-      description: "Passionate about cycling and solo adventure travel — a great way for me to reset and find inspiration.",
+      description: "Passionate about cycling and solo adventure travel — my ultimate ways to reset, disconnect, and find new technical inspiration.",
     },
   ],
 };
 
 // ==================== SKILLS SECTION ====================
 export const skillsData = {
-  description: "Throughout my programming journey, I've gained hands-on experience in backend and frontend development, database management systems, and various tools related to software development since the beginning of my bachelor's studies.",
+  description: "Throughout my engineering journey, I've developed deep technical expertise in modern architecture, backend logic orchestration, database tuning, and slick frontend frameworks.",
   skills: [
     {
       icon: "fa fa-code",
       title: "Programming Languages",
       description: "JavaScript, TypeScript, PHP, Java, C#, C++, Go",
-      brief: "My programming journey began with C++ during my bachelor's degree, where I learned the fundamentals of programming. Before that, I had basic knowledge of HTML and CSS. Java was my second language, where I built my first console application - a systematic Payroll Management System. This project taught me the value of teamwork and collaboration. Later, I learned C# and developed my first Windows application, a Travellers Management System. As I progressed, I moved into web development, learning PHP and JavaScript along with their modern frameworks.",
+      brief: "My programming journey began with C++ during my bachelor's degree, where I mastered fundamental algorithmic concepts. Java followed, helping me build my first collaborative Payroll Management System. Later, I adopted C# for a desktop-driven Travellers Management System. As I moved fully into modern web environments, TypeScript, JavaScript, and PHP became my primary tools for engineering enterprise-level software infrastructure.",
     },
     {
       icon: "fa-brands fa-react",
       title: "Frameworks & Libraries",
       description: "NestJS, Next.js, ASP.NET Core, Vue.js, Laravel, Bootstrap, Tailwind CSS, Shadcn",
-      brief: "Next.js and NestJS were among my first experiences with modern web frameworks, giving me a strong foundation in full-stack development. ASP.NET Core stood out by introducing me to enterprise-level application architecture and best practices. For UI development, I became proficient with Tailwind CSS and Bootstrap, enabling me to build responsive and visually consistent interfaces efficiently. Laravel and Vue.js were frameworks I adopted in a professional setting, and they have since become integral to my development workflow. Each of these technologies has shaped my approach to building scalable, maintainable, and high-quality applications."
+      brief: "Next.js and NestJS form my sweet-spot for building high-performance full-stack systems. For enterprise logic, ASP.NET Core introduced me to structured, reliable backend patterns. On the frontend, I utilize Tailwind CSS, modern CSS, and component systems like Shadcn UI to construct pixel-perfect, accessible, and clean user interfaces. In my day-to-day engineering at CodeLab, Laravel and Vue.js are core drivers for our production microservices."
     },
     {
       icon: "fa fa-database",
       title: "Database Management",
       description: "MySQL, PostgreSQL, MS SQL Server, Oracle, MongoDB, SQLite",
-      brief: "I have extensive experience with both relational and NoSQL databases. MySQL and PostgreSQL are my go-to choices for relational data, while MongoDB serves my needs for flexible, document-based storage. I've worked with MS SQL Server in enterprise environments and have experience with Oracle databases. My database skills include designing schemas, optimizing queries, implementing indexing strategies, and ensuring data integrity and security.",
+      brief: "Experienced with relational schema design and flexible dynamic documents. PostgreSQL and MySQL are my defaults for strict data mapping, whereas MongoDB handles quick-evolving records. My database workflows focus heavily on query runtime optimization, handling transactional integrity, managing indexing setups, and implementing bulletproof structural relationship design.",
     },
     {
       icon: "fa fa-screwdriver-wrench",
       title: "Development Tools",
       description: "Git, GitHub, Docker, Figma, WordPress, Nginx, Apache, Ubuntu 24.04",
-      brief: "I'm proficient with modern development tools and workflows. Git and GitHub or Bitbucket are essential for version control and collaboration. Docker helps me create consistent development environments and streamline deployments. I use Figma for design collaboration and translating designs to code. I have experience configuring and managing web servers like Nginx and Apache, and I'm comfortable working in Ubuntu Linux environments. WordPress development has given me insights into CMS-based solutions and plugin architecture.",
+      brief: "Proficient in orchestrating reliable dev environments and deploy workflows. I leverage Git paired with GitHub/Bitbucket for streamlined collaboration. Docker allows me to bundle deterministic microservices safely, while Nginx web proxies serve my production builds across Linux/Ubuntu server distribution instances smoothly.",
     },
   ],
 };
 
 // ==================== PROJECTS SECTION ====================
 export const projectsData = {
-  description: "Throughout my academic and professional journey, I have worked on a wide range of projects across different tech stacks to explore new technologies and identify my preferred development stack.",
+  description: "Throughout my academic and professional journey, I have built a wide range of web and system applications across different production tech stacks.",
   projects: [
     {
       title: "ChainNative (Merchant)",
@@ -156,27 +156,25 @@ export const projectsData = {
       bgImage: "/work-1.WebP",
       technologies: ["ASP.NET Core", "PostgreSQL"],
       liveUrl: "/projects/chainnative/merchant",
-      // githubUrl: "#",
     },
     {
       title: "ChainNative (Admin)",
-      description: "Full-Stack Payment Gateway System",
+      description: "Full-Stack Payment Gateway System Admin Dashboard",
       bgImage: "/work-2.WebP",
       technologies: ["NestJS", "Next.js", "PostgreSQL"],
       liveUrl: "/projects/chainnative/admin",
-      // githubUrl: "#",
     },
     {
       title: "RESMO",
-      description: "A Multi-School Japanese School Management System",
+      description: "A Multi-School Japanese School Management Cloud Platform",
       bgImage: "/work-3.WebP",
-      technologies: ["Laravel,", "Vue.js", "MySQL"],
+      technologies: ["Laravel", "Vue.js", "MySQL"],
       liveUrl: "/projects/resmo",
       githubUrl: "#",
     },
     {
       title: "RoamEase",
-      description: "Windows application for Travelers Management System",
+      description: "Desktop application for Travelers Management Management Systems",
       bgImage: "/work-4.WebP",
       technologies: ["C#", "MS SQL Server"],
       liveUrl: "/projects/roamease",
@@ -187,20 +185,20 @@ export const projectsData = {
 
 // ==================== EXPERIENCE SECTION ====================
 export const experienceData = {
-  description: "My professional journey in software development, building impactful solutions and growing as a developer.",
+  description: "My professional journey in software development, building impactful solutions and growing as an engineer.",
   experiences: [
     {
       id: 1,
       company: "CodeLab FZC LLC",
-      position: "Full-Stack Developer",
-      location: "UAE (Remote from Dhaka, Bangladesh) - Onsite",
+      position: "Software Engineer",
+      location: "UAE (Remote / Hybrid from Dhaka, Bangladesh)",
       duration: "June 2024 - Present",
       type: "Full-time",
       responsibilities: [
         "Architected and developed enterprise-grade full-stack applications using NestJS, Next.js, ASP.NET Core, Vue.js, and Laravel, serving clients across Japan and UAE markets",
         "Collaborated closely with senior engineers and cross-functional teams in an Agile environment to deliver scalable, production-ready solutions meeting strict business requirements and deadlines",
         "Implemented robust backend systems with TypeScript, integrating MySQL and PostgreSQL databases with Prisma ORM, ensuring data integrity and optimal query performance",
-        "Orchestrated CI/CD pipelines and production deployments using Docker containerization, Nginx reverse proxy, and Ubuntu servers and seamless version releases",
+        "Orchestrated CI/CD pipelines and production deployments using Docker containerization, Nginx reverse proxy, and Ubuntu servers for seamless version releases",
         "Integrated message queuing systems using RabbitMQ for asynchronous processing, improving application scalability and handling high-traffic scenarios efficiently",
         "Leveraged modern UI component libraries including Shadcn and Bootstrap to accelerate development while maintaining consistent, accessible design systems",
       ],
@@ -219,7 +217,7 @@ export const experienceData = {
         "Git",
         "GitHub",
         "Bitbucket",
-        "nginx",
+        "Nginx",
         "Prisma",
         "RabbitMQ",
         "Shadcn",
@@ -230,7 +228,7 @@ export const experienceData = {
 
 // ==================== CONTACT SECTION ====================
 export const contactData = {
-  description: "Have a project in mind or just want to chat? Feel free to reach out. I'm always open to discussing new opportunities and collaborations.",
+  description: "Have a project in mind or just want to chat? Feel free to reach out. I'm always open to discussing new opportunities and software engineering collaborations.",
 };
 
 // ==================== TOOLS/TECHNOLOGIES ====================
@@ -249,6 +247,5 @@ export const navigationLinks = [
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
-  // { name: "Blogs", href: "#blogs" },
   { name: "Contact", href: "#contact" },
 ];

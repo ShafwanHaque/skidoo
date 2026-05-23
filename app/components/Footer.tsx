@@ -34,7 +34,7 @@ const Footer = ({ isDarkMode }: FooterProps) => {
 
   return (
     <footer
-      className={`w-full mt-20 pt-12 pb-6 ${
+      className={`w-full mt-12 sm:mt-16 md:mt-20 pt-8 sm:pt-12 pb-6 ${
         isDarkMode ? "bg-gray-950" : "bg-gray-50"
       }`}
       role="contentinfo"
@@ -68,13 +68,13 @@ const Footer = ({ isDarkMode }: FooterProps) => {
 
         {/* Divider */}
         <div
-          className={`border-t mx-[10%] mt-8 ${
+          className={`border-t mx-[4%] sm:mx-[10%] mt-8 ${
             isDarkMode ? "border-gray-700" : "border-gray-300"
           }`}
         />
 
         {/* Bottom Section */}
-        <div className="flex flex-col sm:flex-row items-center justify-between mx-[10%] mt-6 gap-6">
+        <div className="flex flex-col sm:flex-row items-center justify-between mx-[4%] sm:mx-[10%] mt-6 gap-4 sm:gap-6">
           {/* Social Links */}
           <ul
             className="flex items-center gap-6 justify-center"

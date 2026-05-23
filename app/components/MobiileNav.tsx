@@ -34,7 +34,7 @@ const MobileNav = ({ isOpen, onClose, isDarkMode, activeSection }: MobileNavProp
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed top-0 right-0 w-72 z-40 shadow-2xl"
+          className="fixed top-0 right-0 w-4/5 max-w-[288px] z-40 shadow-2xl"
           style={{ 
             backgroundColor: isDarkMode ? "#030712" : "#f3f4f6",
             opacity: 1,

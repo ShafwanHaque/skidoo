@@ -70,7 +70,7 @@ const About = ({ isDarkMode }: AboutProps) => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-5"
+            className="grid grid-cols-1 min-[480px]:grid-cols-2 gap-3 sm:gap-4 md:gap-5"
           >
             {aboutData.infoCards.map((card, index) => (
               <motion.li
