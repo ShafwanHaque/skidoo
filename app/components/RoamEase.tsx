@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { assets, personalInfo } from "@/assets/assets";
@@ -10,7 +10,7 @@ type RoamEaseProps = {
 };
 
 export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
-  const [activeTab, setActiveTab] = useState("overview");
+  // const [activeTab, setActiveTab] = useState("overview");
 
   const projectInfo = {
     title: "RoamEase",
@@ -319,10 +319,11 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
         <Link href="/#home" aria-label="Go to home section">
           <Image
             src={isDarkMode ? assets.logo_dark : assets.logo}
-            className="w-28 md:w-30 cursor-pointer"
+            className="w-28 md:w-30 h-auto cursor-pointer"
             alt={`${personalInfo.name} logo`}
             width={160}
             height={40}
+            priority
           />
         </Link>
       </div>
@@ -371,7 +372,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
             <span
               className={`px-4 py-2 rounded-full text-sm ${
                 isDarkMode
-                  ? "bg-gray-800 text-gray-300"
+                  ? "bg-gray-800 text-gray-200"
                   : "bg-gray-100 text-gray-700"
               }`}
             >
@@ -381,7 +382,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
             <span
               className={`px-4 py-2 rounded-full text-sm ${
                 isDarkMode
-                  ? "bg-gray-800 text-gray-300"
+                  ? "bg-gray-800 text-gray-200"
                   : "bg-gray-100 text-gray-700"
               }`}
             >
@@ -408,7 +409,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
               href="/#projects"
               className={`inline-flex items-center gap-2 px-6 py-3 rounded-full border transition-all duration-300 ${
                 isDarkMode
-                  ? "border-gray-700 text-gray-300 hover:bg-gray-800"
+                  ? "border-gray-700 text-gray-200 hover:bg-gray-800"
                   : "border-gray-300 text-gray-700 hover:bg-gray-100"
               }`}
             >
@@ -476,7 +477,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
           </h2>
           <p
             className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             Comprehensive travel management with role-based access and SMTP
@@ -506,7 +507,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
                 <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
                 <p
                   className={`text-sm leading-relaxed ${
-                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                    isDarkMode ? "text-gray-200" : "text-gray-600"
                   }`}
                 >
                   {feature.description}
@@ -534,7 +535,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
           </h2>
           <p
             className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             Multi-role access control system for different user types
@@ -568,7 +569,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
                       ></i>
                       <span
                         className={`text-sm ${
-                          isDarkMode ? "text-gray-300" : "text-gray-600"
+                          isDarkMode ? "text-gray-200" : "text-gray-600"
                         }`}
                       >
                         {capability}
@@ -595,7 +596,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
           </h2>
           <p
             className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             Layered architecture pattern for maintainable and scalable code
@@ -645,7 +646,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
                       ></i>
                       <span
                         className={`text-sm ${
-                          isDarkMode ? "text-gray-300" : "text-gray-600"
+                          isDarkMode ? "text-gray-200" : "text-gray-600"
                         }`}
                       >
                         {component}
@@ -696,7 +697,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
                 </h3>
                 <p
                   className={`leading-relaxed ${
-                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                    isDarkMode ? "text-gray-200" : "text-gray-600"
                   }`}
                 >
                   {highlight.description}
@@ -720,7 +721,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
           </h2>
           <p
             className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             Technical obstacles overcome during development
@@ -742,7 +743,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
               >
                 <div className="flex items-start gap-4">
                   <div
-                    className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
+                    className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center ${
                       isDarkMode ? "bg-red-400/10" : "bg-red-100"
                     }`}
                   >
@@ -758,7 +759,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
                     </h3>
                     <div className="flex items-start gap-4 mt-3">
                       <div
-                        className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
+                        className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center ${
                           isDarkMode ? "bg-green-400/10" : "bg-green-100"
                         }`}
                       >
@@ -778,7 +779,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
                         </h4>
                         <p
                           className={`leading-relaxed ${
-                            isDarkMode ? "text-gray-300" : "text-gray-600"
+                            isDarkMode ? "text-gray-200" : "text-gray-600"
                           }`}
                         >
                           {item.solution}
@@ -810,7 +811,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
           </h2>
           <p
             className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             Key skills and knowledge gained from this project
@@ -837,7 +838,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
                 </h3>
                 <p
                   className={`text-sm leading-relaxed ${
-                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                    isDarkMode ? "text-gray-200" : "text-gray-600"
                   }`}
                 >
                   {outcome.description}
@@ -862,7 +863,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
           </h2>
           <p
             className={`mb-8 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             Explore the complete implementation on GitHub
@@ -887,9 +888,10 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
           <Image
             src={isDarkMode ? assets.logo_dark : assets.logo}
             alt={`${personalInfo.name} logo`}
-            className="w-36 mx-auto mb-4"
+            className="w-36 h-auto mx-auto mb-4"
             width={144}
             height={36}
+            priority
           />
         </Link>
       </section>

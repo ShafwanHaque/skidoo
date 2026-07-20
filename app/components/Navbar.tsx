@@ -120,7 +120,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
 
     return `${baseClass} ${
       isDarkMode
-        ? "text-gray-300 hover:text-cyan-400"
+        ? "text-gray-200 hover:text-cyan-400"
         : "text-gray-700 hover:text-purple-600"
     }`;
   };
@@ -148,7 +148,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
 
       {/* Navigation Bar */}
       <nav
-        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-3 flex items-center justify-between z-50
+        className={`w-full fixed px-4 sm:px-6 lg:px-8 xl:px-[8%] py-3 flex items-center justify-between z-50
         transition-transform duration-300 ease-in-out
         ${isNavbarVisible ? "translate-y-0" : "-translate-y-full"}
         ${
@@ -166,17 +166,18 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
           <a href="#home" aria-label="Go to home section">
             <Image
               src={isDarkMode ? assets.logo_dark : assets.logo}
-              className="w-28 md:w-30 cursor-pointer"
+              className="w-28 md:w-30 cursor-pointer h-auto"
               alt={`${personalInfo.name} logo`}
               width={160}
               height={40}
+              priority
             />
           </a>
         </div>
 
         {/* Desktop Navigation */}
         <ul
-          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-8 py-2.5 transition-all duration-300 ${
+          className={`hidden md:flex items-center gap-4 lg:gap-7 xl:gap-8 rounded-full px-5 lg:px-8 py-2.5 text-sm lg:text-base transition-all duration-300 ${
             isScrolled
               ? ""
               : isDarkMode
@@ -230,7 +231,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
               }`}
               aria-label="Connect on LinkedIn"
             >
-              <span className="font-ovo">Let's connect</span>
+              <span className="font-ovo">Let&apos;s connect</span>
               <i className="fa fa-arrow-right rotate-[-45deg]" aria-hidden="true"></i>
             </a>
           </div>

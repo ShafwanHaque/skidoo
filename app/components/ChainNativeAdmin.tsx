@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { assets, personalInfo } from "@/assets/assets";
@@ -12,7 +12,7 @@ type ChainNativeAdminProps = {
 export default function ChainNativeAdmin({
   isDarkMode = false,
 }: ChainNativeAdminProps) {
-  const [activeTab, setActiveTab] = useState("overview");
+  // const [activeTab, setActiveTab] = useState("overview");
   const [activeScreenshot, setActiveScreenshot] = useState<{
     title: string;
     path: string;
@@ -290,10 +290,11 @@ export default function ChainNativeAdmin({
         <Link href="/#home" aria-label="Go to home section">
           <Image
             src={isDarkMode ? assets.logo_dark : assets.logo}
-            className="w-28 md:w-30 cursor-pointer"
+            className="w-28 md:w-30 h-auto cursor-pointer"
             alt={`${personalInfo.name} logo`}
             width={160}
             height={40}
+            priority
           />
         </Link>
       </div>
@@ -343,7 +344,7 @@ export default function ChainNativeAdmin({
             <span
               className={`px-4 py-2 rounded-full text-sm ${
                 isDarkMode
-                  ? "bg-gray-800 text-gray-300"
+                  ? "bg-gray-800 text-gray-200"
                   : "bg-gray-100 text-gray-700"
               }`}
             >
@@ -353,7 +354,7 @@ export default function ChainNativeAdmin({
             <span
               className={`px-4 py-2 rounded-full text-sm ${
                 isDarkMode
-                  ? "bg-gray-800 text-gray-300"
+                  ? "bg-gray-800 text-gray-200"
                   : "bg-gray-100 text-gray-700"
               }`}
             >
@@ -378,7 +379,7 @@ export default function ChainNativeAdmin({
               href="/#projects"
               className={`inline-flex items-center gap-2 px-6 py-3 rounded-full border transition-all duration-300 ${
                 isDarkMode
-                  ? "border-gray-700 text-gray-300 hover:bg-gray-800"
+                  ? "border-gray-700 text-gray-200 hover:bg-gray-800"
                   : "border-gray-300 text-gray-700 hover:bg-gray-100"
               }`}
             >
@@ -446,7 +447,7 @@ export default function ChainNativeAdmin({
           </h2>
           <p
             className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             Comprehensive tools for managing merchants, stores, and system-wide
@@ -476,7 +477,7 @@ export default function ChainNativeAdmin({
                 <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
                 <p
                   className={`text-sm leading-relaxed ${
-                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                    isDarkMode ? "text-gray-200" : "text-gray-600"
                   }`}
                 >
                   {feature.description}
@@ -504,7 +505,7 @@ export default function ChainNativeAdmin({
           </h2>
           <p
             className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             Independent, scalable services communicating via event-driven
@@ -545,7 +546,7 @@ export default function ChainNativeAdmin({
                       ></i>
                       <span
                         className={`text-sm ${
-                          isDarkMode ? "text-gray-300" : "text-gray-600"
+                          isDarkMode ? "text-gray-200" : "text-gray-600"
                         }`}
                       >
                         {point}
@@ -602,7 +603,7 @@ export default function ChainNativeAdmin({
                       ></i>
                       <span
                         className={`text-sm ${
-                          isDarkMode ? "text-gray-300" : "text-gray-600"
+                          isDarkMode ? "text-gray-200" : "text-gray-600"
                         }`}
                       >
                         {feature}
@@ -653,7 +654,7 @@ export default function ChainNativeAdmin({
                 </h3>
                 <p
                   className={`leading-relaxed ${
-                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                    isDarkMode ? "text-gray-200" : "text-gray-600"
                   }`}
                 >
                   {highlight.description}
@@ -677,7 +678,7 @@ export default function ChainNativeAdmin({
           </h2>
           <p
             className={`text-center max-w-2xl mx-auto mb-12 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             Complex problems solved during the development of this microservice
@@ -700,7 +701,7 @@ export default function ChainNativeAdmin({
               >
                 <div className="flex items-start gap-4">
                   <div
-                    className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
+                    className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center ${
                       isDarkMode ? "bg-red-400/10" : "bg-red-100"
                     }`}
                   >
@@ -716,7 +717,7 @@ export default function ChainNativeAdmin({
                     </h3>
                     <div className="flex items-start gap-4 mt-3">
                       <div
-                        className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
+                        className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center ${
                           isDarkMode ? "bg-green-400/10" : "bg-green-100"
                         }`}
                       >
@@ -736,7 +737,7 @@ export default function ChainNativeAdmin({
                         </h4>
                         <p
                           className={`leading-relaxed ${
-                            isDarkMode ? "text-gray-300" : "text-gray-600"
+                            isDarkMode ? "text-gray-200" : "text-gray-600"
                           }`}
                         >
                           {item.solution}
@@ -829,7 +830,7 @@ export default function ChainNativeAdmin({
           </h2>
           <p
             className={`mb-8 font-ovo ${
-              isDarkMode ? "text-gray-300" : "text-gray-600"
+              isDarkMode ? "text-gray-200" : "text-gray-600"
             }`}
           >
             See how the merchant and admin systems work together to create a
@@ -853,9 +854,10 @@ export default function ChainNativeAdmin({
           <Image
             src={isDarkMode ? assets.logo_dark : assets.logo}
             alt={`${personalInfo.name} logo`}
-            className="w-36 mx-auto mb-4"
+            className="w-36 h-auto mx-auto mb-4"
             width={144}
             height={36}
+            priority
           />
         </Link>
       </section>
@@ -902,7 +904,7 @@ export default function ChainNativeAdmin({
             {/* Title */}
             <div
               className={`p-4 text-center ${
-                isDarkMode ? "text-gray-300" : "text-gray-700"
+                isDarkMode ? "text-gray-200" : "text-gray-700"
               }`}
             >
               <h3 className="font-semibold">{activeScreenshot.title}</h3>
