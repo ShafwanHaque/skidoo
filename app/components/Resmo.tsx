@@ -315,7 +315,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
       </div>
 
       {/* Hero Section */}
-      <section className="relative w-full px-6 sm:px-8 md:px-[12%] py-20 md:py-32">
+      <section className="relative w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-20 md:py-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -409,7 +409,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
 
       {/* Technologies Section */}
       <section
-        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+        className={`w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16 ${
           isDarkMode ? "bg-gray-900" : "bg-gray-50"
         }`}
       >
@@ -452,7 +452,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
       </section>
 
       {/* Features Section */}
-      <section className="w-full px-6 sm:px-8 md:px-[12%] py-16">
+      <section className="w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -507,7 +507,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
 
       {/* User Portals Section */}
       <section
-        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+        className={`w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16 ${
           isDarkMode ? "bg-gray-900" : "bg-gray-50"
         }`}
       >
@@ -578,7 +578,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
       </section>
 
       {/* Development Contributions */}
-      <section className="w-full px-6 sm:px-8 md:px-[12%] py-16">
+      <section className="w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -650,7 +650,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
 
       {/* Technical Highlights */}
       <section
-        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+        className={`w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16 ${
           isDarkMode ? "bg-gray-900" : "bg-gray-50"
         }`}
       >
@@ -697,7 +697,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
       </section>
 
       {/* Challenges & Solutions */}
-      <section className="w-full px-6 sm:px-8 md:px-[12%] py-16">
+      <section className="w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -784,7 +784,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
 
       {/* photos Section */}
       <section
-        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+        className={`w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16 ${
           isDarkMode ? "bg-gray-900" : "bg-gray-50"
         }`}
       >
@@ -847,7 +847,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
       </section>
 
       {/* Call to Action */}
-      <section className="w-full px-6 sm:px-8 md:px-[12%] py-20">
+      <section className="w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -895,7 +895,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
 
         {activeScreenshot && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 py-4 sm:py-8 overflow-y-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -907,7 +907,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.3 }}
               onClick={(e) => e.stopPropagation()}
-              className={`relative w-full max-w-6xl rounded-xl overflow-hidden ${
+              className={`case-study-modal-panel relative w-full max-w-6xl rounded-xl overflow-hidden ${
                 isDarkMode ? "bg-gray-900" : "bg-white"
               }`}
             >
@@ -921,7 +921,7 @@ export default function Resmo({ isDarkMode = false }: ResmoProps) {
               </button>
 
               {/* Image */}
-              <div className="relative w-full h-[80vh]">
+              <div className="case-study-modal-image relative w-full h-[min(60dvh,700px)] sm:h-[min(70dvh,700px)]">
                 <Image
                   src={activeScreenshot.path}
                   alt={activeScreenshot.title}

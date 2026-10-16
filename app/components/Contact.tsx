@@ -200,7 +200,7 @@ const Contact = ({ isDarkMode }: ContactProps) => {
         I&apos;m always open to discussing new opportunities and collaborations.
       </motion.p>
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
         {/* Contact Information */}
         <motion.div
           initial={{ x: -50, opacity: 0 }}
@@ -232,7 +232,7 @@ const Contact = ({ isDarkMode }: ContactProps) => {
                   >
                     Email
                   </p>
-                  <p className="font-medium">
+                  <p className="font-medium break-all">
                     shafwanulhaquechowdhury@gmail.com
                   </p>
                 </div>

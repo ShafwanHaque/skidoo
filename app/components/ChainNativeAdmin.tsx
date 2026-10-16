@@ -300,7 +300,7 @@ export default function ChainNativeAdmin({
       </div>
 
       {/* Hero Section */}
-      <section className="relative w-full px-6 sm:px-8 md:px-[12%] py-20 md:py-32">
+      <section className="relative w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-20 md:py-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -392,7 +392,7 @@ export default function ChainNativeAdmin({
 
       {/* Technologies Section */}
       <section
-        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+        className={`w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16 ${
           isDarkMode ? "bg-gray-900" : "bg-gray-50"
         }`}
       >
@@ -435,7 +435,7 @@ export default function ChainNativeAdmin({
       </section>
 
       {/* Features Section */}
-      <section className="w-full px-6 sm:px-8 md:px-[12%] py-16">
+      <section className="w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -490,7 +490,7 @@ export default function ChainNativeAdmin({
 
       {/* Architecture Features */}
       <section
-        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+        className={`w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16 ${
           isDarkMode ? "bg-gray-900" : "bg-gray-50"
         }`}
       >
@@ -512,7 +512,7 @@ export default function ChainNativeAdmin({
             architecture
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
             {architectureFeatures.map((arch, index) => (
               <motion.div
                 key={index}
@@ -561,7 +561,7 @@ export default function ChainNativeAdmin({
       </section>
 
       {/* Admin Modules */}
-      <section className="w-full px-6 sm:px-8 md:px-[12%] py-16">
+      <section className="w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -619,7 +619,7 @@ export default function ChainNativeAdmin({
 
       {/* Technical Highlights */}
       <section
-        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+        className={`w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16 ${
           isDarkMode ? "bg-gray-900" : "bg-gray-50"
         }`}
       >
@@ -666,7 +666,7 @@ export default function ChainNativeAdmin({
       </section>
 
       {/* Challenges & Solutions */}
-      <section className="w-full px-6 sm:px-8 md:px-[12%] py-16">
+      <section className="w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -754,7 +754,7 @@ export default function ChainNativeAdmin({
 
       {/* photos Section */}
       <section
-        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+        className={`w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16 ${
           isDarkMode ? "bg-gray-900" : "bg-gray-50"
         }`}
       >
@@ -817,7 +817,7 @@ export default function ChainNativeAdmin({
       </section>
 
       {/* Call to Action */}
-      <section className="w-full px-6 sm:px-8 md:px-[12%] py-20">
+      <section className="w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -864,7 +864,7 @@ export default function ChainNativeAdmin({
 
       {activeScreenshot && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 py-4 sm:py-8 overflow-y-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -876,7 +876,7 @@ export default function ChainNativeAdmin({
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ duration: 0.3 }}
             onClick={(e) => e.stopPropagation()}
-            className={`relative w-full max-w-6xl rounded-xl overflow-hidden ${
+            className={`case-study-modal-panel relative w-full max-w-6xl rounded-xl overflow-hidden ${
               isDarkMode ? "bg-gray-900" : "bg-white"
             }`}
           >
@@ -890,7 +890,7 @@ export default function ChainNativeAdmin({
             </button>
 
             {/* Image */}
-            <div className="relative w-full h-[80vh]">
+            <div className="case-study-modal-image relative w-full h-[min(60dvh,700px)] sm:h-[min(70dvh,700px)]">
               <Image
                 src={activeScreenshot.path}
                 alt={activeScreenshot.title}

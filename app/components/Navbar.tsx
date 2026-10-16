@@ -69,8 +69,8 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
     const handleScrollDirection = () => {
       const currentScrollY = window.scrollY;
 
-      // Only apply on mobile
-      if (window.innerWidth < 768) {
+      // Keep the compact navigation behavior until the desktop navigation fits.
+      if (window.innerWidth < 1024) {
         if (currentScrollY > lastScrollY && currentScrollY > 80) {
           // Scrolling DOWN
           setIsNavbarVisible(false);
@@ -177,7 +177,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
 
         {/* Desktop Navigation */}
         <ul
-          className={`hidden md:flex items-center gap-4 lg:gap-7 xl:gap-8 rounded-full px-5 lg:px-8 py-2.5 text-sm lg:text-base transition-all duration-300 ${
+          className={`hidden lg:flex items-center gap-4 lg:gap-7 xl:gap-8 rounded-full px-5 lg:px-8 py-2.5 text-sm lg:text-base transition-all duration-300 ${
             isScrolled
               ? ""
               : isDarkMode
@@ -219,7 +219,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
           </button>
 
           {/* Connect Button (Desktop) */}
-          <div className="hidden md:flex">
+          <div className="hidden lg:flex">
             <a
               href={personalInfo.linkedin}
               target="_blank"
@@ -238,7 +238,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="block md:hidden ml-3 p-2"
+            className="block lg:hidden ml-3 p-2"
             onClick={() => setIsMenuOpen(true)}
             aria-label="Open navigation menu"
             aria-expanded={isMenuOpen}

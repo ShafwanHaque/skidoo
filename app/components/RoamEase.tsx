@@ -328,7 +328,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
         </Link>
       </div>
       {/* Hero Section */}
-      <section className="relative w-full px-6 sm:px-8 md:px-[12%] py-20 md:py-32">
+      <section className="relative w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-20 md:py-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -422,7 +422,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
 
       {/* Technologies Section */}
       <section
-        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+        className={`w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16 ${
           isDarkMode ? "bg-gray-900" : "bg-gray-50"
         }`}
       >
@@ -465,7 +465,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
       </section>
 
       {/* Features Section */}
-      <section className="w-full px-6 sm:px-8 md:px-[12%] py-16">
+      <section className="w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -520,7 +520,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
 
       {/* User Roles Section */}
       <section
-        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+        className={`w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16 ${
           isDarkMode ? "bg-gray-900" : "bg-gray-50"
         }`}
       >
@@ -584,7 +584,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
       </section>
 
       {/* System Architecture */}
-      <section className="w-full px-6 sm:px-8 md:px-[12%] py-16">
+      <section className="w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -662,7 +662,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
 
       {/* Technical Highlights */}
       <section
-        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+        className={`w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16 ${
           isDarkMode ? "bg-gray-900" : "bg-gray-50"
         }`}
       >
@@ -709,7 +709,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
       </section>
 
       {/* Challenges & Solutions */}
-      <section className="w-full px-6 sm:px-8 md:px-[12%] py-16">
+      <section className="w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -796,7 +796,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
 
       {/* Learning Outcomes */}
       <section
-        className={`w-full px-6 sm:px-8 md:px-[12%] py-16 ${
+        className={`w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-16 ${
           isDarkMode ? "bg-gray-900" : "bg-gray-50"
         }`}
       >
@@ -850,7 +850,7 @@ export default function RoamEase({ isDarkMode = false }: RoamEaseProps) {
       </section>
 
       {/* Call to Action */}
-      <section className="w-full px-6 sm:px-8 md:px-[12%] py-20">
+      <section className="w-full px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -41,10 +41,10 @@ const Home = ({ isDarkMode }: HomeProps) => {
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="flex items-end gap-2 text-lg sm:text-xl md:text-2xl mb-2 font-ovo"
+        className="flex flex-wrap items-end justify-center gap-2 text-base sm:text-xl md:text-2xl mb-2 font-ovo"
       >
         {homeData.greeting}
-        <Image src={handIcon} alt="Waving hand" className="w-5 sm:w-6" />
+        <Image src={handIcon} alt="Waving hand" className="w-5 sm:w-6 shrink-0" />
       </motion.h2>
 
       {/* Main Title — smooth scale: 30→36→48→60→66px */}

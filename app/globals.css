@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+/* Keep content and image modals within narrow and short viewports. */
+.case-study-modal-panel {
+  max-height: calc(100dvh - 2rem);
+}
+
+.case-study-modal-image {
+  min-height: 12rem;
+}
+
+@media (max-width: 360px) {
+  .case-study-modal-image {
+    min-height: 10rem;
+  }
+}
+
 .fa-solid,
 .fas {
   font-family: 'Font Awesome 6 Free';
