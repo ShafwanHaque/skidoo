@@ -6,6 +6,12 @@ const redis = Redis.fromEnv();
 const RESERVATION_SECONDS = 60;
 const MAX_LENGTHS = { name: 100, email: 254, subject: 200, message: 5000 };
 
+function getClientIp(req: Request): string | null {
+  // Vercel sets this header from the connecting client IP. Unlike the generic
+  // forwarding header, it remains the Vercel value when another proxy is in front.
+  return req.headers.get("x-vercel-forwarded-for")?.split(",")[0].trim() || null;
+}
+
 function escapeHtml(value: string): string {
   return value.replace(/[&<>"']/g, (char) => ({
     "&": "&amp;",
@@ -22,8 +28,10 @@ function getCooldownSeconds(sendCount: number): number {
 }
 
 export async function POST(req: Request) {
-  const ip =
-    req.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? "anonymous";
+  const ip = getClientIp(req);
+  if (!ip) {
+    return Response.json({ error: "Unable to determine client IP" }, { status: 503 });
+  }
 
   const countKey = `contact:count:${ip}`;
   const lockKey = `contact:lock:${ip}`;
@@ -123,8 +131,10 @@ export async function POST(req: Request) {
 }
 
 export async function GET(req: Request) {
-  const ip =
-    req.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? "anonymous";
+  const ip = getClientIp(req);
+  if (!ip) {
+    return Response.json({ error: "Unable to determine client IP" }, { status: 503 });
+  }
 
   const lockKey = `contact:lock:${ip}`;
   const locked = await redis.get<number>(lockKey);
